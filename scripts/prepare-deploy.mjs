@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, '.deploy');
 
-const ROOT_FILES = ['index.html', 'eno-landing.css', 'eno-legal.css', 'manifest.webmanifest', 'sw.js'];
+const ROOT_FILES = ['index.html', 'eno-landing.css', 'eno-legal.css', 'manifest.webmanifest', 'sw.js', 'robots.txt', 'sitemap.xml'];
 
 const ROOT_DIRS = ['assets', 'fonts', 'impressum', 'datenschutz'];
 

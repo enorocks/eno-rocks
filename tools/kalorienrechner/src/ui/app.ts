@@ -10,7 +10,6 @@ import type {
 } from '../calculator/types';
 import { readStorageJson, writeStorageJson } from '../../../../shared/ui/browser-storage';
 import { pediaTermUrl } from '../../../../shared/ui/pedia-url';
-import { toolUrl } from '../../../../shared/ui/tool-url';
 import { renderEnoFooter } from '../../../../shared/ui/footer';
 import { renderToolBrandHeader } from '../../../../shared/ui/tool-header';
 import { mountEnoSiteNav } from '../../../../shared/ui/site-nav';
@@ -31,10 +30,6 @@ function formatKcal(value: number): string {
 
 function pediaLink(termId: string, label: string): string {
     return `<a class="eno-inline-link" href="${escapeHtml(pediaTermUrl(termId))}">${escapeHtml(label)}</a>`;
-}
-
-function toolLink(href: string, label: string): string {
-    return `<a class="eno-inline-link" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
 }
 
 function readForm(form: HTMLFormElement): Partial<CalculatorInput> {
@@ -279,11 +274,6 @@ function renderResults(result: CalculatorResult, input: CalculatorInput): string
             </p>
 
             <div class="eno-hint-grid">
-                <article class="eno-hint-card">
-                    <h3>${pediaLink('protein', 'Protein')}</h3>
-                    <p><strong>${result.proteinMinG}–${result.proteinMaxG} g/Tag</strong></p>
-                    <p>${escapeHtml(result.proteinNote)} Verteilen in ${toolLink(toolUrl('macros'), 'enoMacros')}.</p>
-                </article>
                 <article class="eno-hint-card">
                     <h3>Alltagsbewegung</h3>
                     <p>7.000+ Schritte täglich sind ein guter Richtwert, aber nicht Pflicht. Wichtiger ist langfristige Konstanz. Mehr: ${pediaLink('schritte', 'Schritte')}.</p>
