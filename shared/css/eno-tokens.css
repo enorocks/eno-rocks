@@ -1,0 +1,32 @@
+/* ENO · Design-Tokens (Hub + Tools) */
+
+:root {
+    --eno-bg: #f7f3ec;
+    --eno-surface: #fffaf2;
+    --eno-text: #23211f;
+    --eno-muted: #6f675f;
+    --eno-line: #ded1c1;
+    --eno-accent: #1f6f5b;
+    --eno-accent-dark: #124838;
+    --eno-dark: #191817;
+    --eno-radius-md: 16px;
+    --eno-max: 960px;
+    --eno-font: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    /* Tool-Farben (Hub, Menü, später Favicons) */
+    --eno-tool-hub: var(--eno-accent);
+    --eno-tool-dailytogether: #e07a5f;
+    --eno-tool-kalorienrechner: #3a6fd4;
+    --eno-tool-makrorechner: #7b5ea7;
+    --eno-tool-uebungen: #d4534a;
+    --eno-tool-pedia: #d4920a;
+    --eno-tool-patreon: #000000;
+
+    /* Legacy-Aliase */
+    --dt-primary: var(--eno-tool-dailytogether);
+    --eno-tool-enzyklopaedie: var(--eno-tool-pedia);
+}
+
+body {
+    margin: 0;
+}

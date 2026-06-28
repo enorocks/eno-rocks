@@ -1,0 +1,436 @@
+/* ENO Tools · Design B */
+
+@import "../../../../shared/css/eno-tokens.css";
+@import "../../../../shared/css/eno-fonts.css";
+@import "../../../../shared/css/eno-footer.css";
+
+*,*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--eno-font);
+    color: var(--eno-text);
+    line-height: 1.55;
+    background: var(--eno-bg);
+}
+
+.eno-tool {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.eno-tool a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Light content panels */
+
+.eno-panel {
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: var(--eno-surface);
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.eno-form {
+    display: grid;
+    gap: 18px;
+}
+
+.eno-fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.eno-fieldset legend {
+    padding: 0;
+    margin-bottom: 4px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--eno-muted);
+}
+
+.eno-field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.eno-field {
+    display: grid;
+    gap: 6px;
+}
+
+.eno-field span {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--eno-text);
+}
+
+.eno-field input,
+.eno-field select {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--eno-line);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--eno-text);
+    background: #fff;
+}
+
+.eno-field input:focus-visible,
+.eno-field select:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--eno-accent) 40%, transparent);
+    outline-offset: 2px;
+    border-color: color-mix(in srgb, var(--eno-accent) 35%, var(--eno-line));
+}
+
+.eno-field-hint {
+    margin: -6px 0 0;
+    font-size: 0.88rem;
+    color: var(--eno-muted);
+    line-height: 1.45;
+}
+
+.eno-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.eno-check input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.eno-segment {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.eno-segment-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 10px;
+    border: 1px solid var(--eno-line);
+    border-radius: 12px;
+    background: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+.eno-segment-item:has(input:checked) {
+    border-color: color-mix(in srgb, var(--eno-accent) 42%, var(--eno-line));
+    background: color-mix(in srgb, var(--eno-accent) 10%, var(--eno-surface));
+    color: var(--eno-accent-dark);
+}
+
+.eno-segment-item input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.eno-submit {
+    min-height: 48px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--eno-dark);
+    color: #fff;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.eno-submit:hover,
+.eno-submit:focus-visible {
+    background: color-mix(in srgb, var(--eno-dark) 88%, var(--eno-accent));
+    outline: none;
+}
+
+.eno-errors {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, #b42318 30%, var(--eno-line));
+    background: color-mix(in srgb, #b42318 6%, var(--eno-surface));
+    color: #7a271a;
+    font-size: 0.92rem;
+}
+
+.eno-errors ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+}
+
+.eno-badge {
+    display: inline-flex;
+    margin: 0 0 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--eno-accent) 10%, var(--eno-surface));
+    color: var(--eno-accent-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.eno-results h2,
+.eno-faq h2,
+.eno-disclaimer h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+}
+
+.eno-results-lead {
+    margin: 0 0 18px;
+    color: var(--eno-muted);
+}
+
+.eno-results-hero {
+    padding: 18px;
+    border-radius: var(--eno-radius-md);
+    background: var(--eno-dark);
+    color: #fff;
+    margin-bottom: 14px;
+}
+
+.eno-results-kicker {
+    margin: 0 0 6px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 600;
+}
+
+.eno-results-main {
+    margin: 0;
+    font-size: clamp(2rem, 7vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.eno-results-main span {
+    font-size: 0.42em;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.eno-results-sub {
+    margin: 8px 0 0;
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.eno-results-pal {
+    margin: 0 0 20px;
+    font-size: 0.88rem;
+    color: var(--eno-muted);
+}
+
+.eno-subtitle {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.eno-goal-grid {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.eno-goal-card {
+    padding: 14px 16px;
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: #fff;
+}
+
+.eno-goal-label {
+    margin: 0 0 4px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--eno-muted);
+}
+
+.eno-goal-kcal {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.eno-goal-kcal span {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: var(--eno-muted);
+}
+
+.eno-goal-macros-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--eno-item-accent);
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.eno-goal-macros-link:hover,
+.eno-goal-macros-link:focus-visible {
+    text-decoration: underline;
+    outline: none;
+}
+
+.eno-results-actions {
+    margin: 0 0 18px;
+}
+
+.eno-share-btn {
+    padding: 10px 14px;
+    border: 1px solid var(--eno-line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--eno-text);
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.eno-share-btn:hover,
+.eno-share-btn:focus-visible {
+    border-color: var(--eno-item-accent);
+    outline: none;
+}
+
+.eno-hint-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.eno-hint-card {
+    padding: 14px;
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: #fff;
+}
+
+.eno-hint-card h3 {
+    margin: 0 0 6px;
+    font-size: 0.92rem;
+}
+
+.eno-hint-card p {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--eno-muted);
+}
+
+.eno-hint-card p + p {
+    margin-top: 6px;
+}
+
+.eno-details {
+    border-top: 1px solid var(--eno-line);
+    padding-top: 12px;
+}
+
+.eno-details summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--eno-accent-dark);
+}
+
+.eno-details-body {
+    margin-top: 12px;
+    overflow-x: auto;
+}
+
+.eno-formula-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.eno-formula-table th,
+.eno-formula-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--eno-line);
+    text-align: left;
+}
+
+.eno-formula-table th {
+    color: var(--eno-muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.eno-formula-note td {
+    padding-top: 0;
+    padding-bottom: 12px;
+    color: var(--eno-muted);
+    font-size: 0.82rem;
+}
+
+.eno-faq-item {
+    border-top: 1px solid var(--eno-line);
+    padding: 12px 0;
+}
+
+.eno-faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.eno-faq-item p {
+    margin: 10px 0 0;
+    color: var(--eno-muted);
+    font-size: 0.92rem;
+}
+
+.eno-disclaimer p {
+    margin: 0;
+    color: var(--eno-muted);
+    font-size: 0.9rem;
+}
+
+.eno-tool-inner > .eno-foot {
+    margin-top: 24px;
+}
+
+@media (max-width: 560px) {
+    .eno-field-grid,
+    .eno-hint-grid,
+    .eno-segment {
+        grid-template-columns: 1fr;
+    }
+
+    .eno-panel {
+        padding: 16px;
+    }
+}

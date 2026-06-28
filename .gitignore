@@ -1,0 +1,13 @@
+node_modules/
+.deploy/
+
+tools/*/node_modules/
+tools/*/dist/
+
+.DS_Store
+Thumbs.db
+*.log
+
+# Lokaler Content, nicht für Live nötig
+01 VIDEO SOCIAL MEDIA/
+logos/

@@ -1,0 +1,55 @@
+/* ENO · Brand (Hub + Tools) */
+
+.eno-hub-brand {
+    margin-bottom: 16px;
+}
+
+.eno-hub-wordmark {
+    margin: 0;
+    font-size: clamp(2.1rem, 9vw, 2.65rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1;
+}
+
+.eno-hub-wordmark a {
+    color: var(--eno-text);
+    text-decoration: none;
+}
+
+.eno-hub-wordmark a:hover,
+.eno-hub-wordmark a:focus-visible {
+    color: var(--eno-accent-dark);
+    outline: none;
+}
+
+.eno-hub-wordmark-dot {
+    color: var(--eno-accent);
+}
+
+.eno-hub-intro {
+    margin-top: 10px;
+    width: 100%;
+    max-width: none;
+}
+
+.eno-hub-intro-line {
+    margin: 0;
+    font-size: clamp(0.95rem, 3.5vw, 1.08rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    color: var(--eno-muted);
+    width: 100%;
+    max-width: none;
+}
+
+.eno-hub-intro-line + .eno-hub-intro-line {
+    margin-top: 8px;
+}
+
+.eno-hub-intro-name {
+    font-weight: 800;
+    color: var(--eno-accent-dark);
+    letter-spacing: -0.03em;
+}

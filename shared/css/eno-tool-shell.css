@@ -1,0 +1,110 @@
+/* ENO · Tool shell (shared header + layout) */
+
+body {
+    margin: 0;
+}
+
+.eno-tool {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.eno-tool-top {
+    background: var(--eno-bg);
+}
+
+.eno-tool-top .eno-tool-inner {
+    width: min(100%, var(--eno-tool-inner-max, var(--eno-max)));
+    margin-inline: auto;
+    padding:
+        max(12px, env(safe-area-inset-top))
+        max(20px, env(safe-area-inset-right))
+        18px
+        max(20px, env(safe-area-inset-left));
+}
+
+.eno-tool-brand {
+    margin-bottom: 0;
+}
+
+.eno-tool-body {
+    flex: 1;
+    background: var(--eno-bg);
+}
+
+.eno-tool-body .eno-tool-inner {
+    padding:
+        24px
+        max(20px, env(safe-area-inset-right))
+        max(40px, env(safe-area-inset-bottom))
+        max(20px, env(safe-area-inset-left));
+}
+
+.eno-tool-inner {
+    width: min(100%, var(--eno-tool-inner-max, var(--eno-max)));
+    margin: 0 auto;
+}
+
+.eno-tool-intro {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: none;
+}
+
+.eno-tool-intro h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.5rem, 4.5vw, 1.85rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    width: 100%;
+    max-width: none;
+}
+
+.eno-lead {
+    margin: 0;
+    color: var(--eno-muted);
+    font-size: clamp(0.98rem, 2.2vw, 1.05rem);
+    font-weight: 500;
+    width: 100%;
+    max-width: none;
+}
+
+.eno-tool-intro p {
+    width: 100%;
+    max-width: none;
+}
+
+.eno-inline-link {
+    color: var(--eno-accent-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.eno-inline-link:hover,
+.eno-inline-link:focus-visible {
+    color: var(--eno-accent);
+    outline: none;
+}
+
+.eno-tool-intro--compact {
+    margin-bottom: 16px;
+}
+
+.eno-hero-updated {
+    margin: 0;
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: var(--eno-muted);
+}
+
+.eno-hero-updated time {
+    font-weight: 600;
+    color: var(--eno-text);
+}
+
+.eno-disclaimer p + p {
+    margin-top: 12px;
+}

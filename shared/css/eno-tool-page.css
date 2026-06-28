@@ -1,0 +1,43 @@
+/* ENO · Tool-Seiten (Akzent aus Hub/Menü auf Inhalt) */
+
+.eno-tool[class*="eno-tool--"] .eno-tool-top {
+    border-bottom: 1px solid color-mix(in srgb, var(--eno-item-accent) 16%, var(--eno-line));
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--eno-item-accent) 5%, var(--eno-bg)) 0%,
+        var(--eno-bg) 72%
+    );
+}
+
+.eno-tool[class*="eno-tool--"] .eno-tool-brand .eno-hub-tagline {
+    color: color-mix(in srgb, var(--eno-item-accent) 80%, var(--eno-text));
+}
+
+.eno-tool[class*="eno-tool--"] .eno-site-nav__toggle:hover,
+.eno-tool[class*="eno-tool--"] .eno-site-nav__toggle:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-item-accent) 45%, var(--eno-line));
+    color: color-mix(in srgb, var(--eno-item-accent) 78%, var(--eno-text));
+}
+
+.eno-tool[class*="eno-tool--"] .eno-form.eno-panel,
+.eno-tool[class*="eno-tool--"] .eno-results.eno-panel,
+.eno-tool[class*="eno-tool--"] .eno-panel.eno-results {
+    border-color: color-mix(in srgb, var(--eno-item-accent) 22%, var(--eno-line));
+    box-shadow: inset 3px 0 0 var(--eno-item-accent);
+}
+
+.eno-tool[class*="eno-tool--"] .eno-submit {
+    background: var(--eno-item-accent);
+}
+
+.eno-tool[class*="eno-tool--"] .eno-submit:hover,
+.eno-tool[class*="eno-tool--"] .eno-submit:focus-visible {
+    background: color-mix(in srgb, var(--eno-item-accent) 86%, #000);
+    outline: none;
+}
+
+.eno-site-nav__item.is-current a {
+    background: color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 12%, var(--eno-surface));
+    color: color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 78%, var(--eno-text));
+    font-weight: 700;
+}

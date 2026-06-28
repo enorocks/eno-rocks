@@ -1,0 +1,15 @@
+{
+  "name": "eno-rocks",
+  "private": true,
+  "scripts": {
+    "icons:sync": "node scripts/sync-lucide-icons.mjs",
+    "prebuild:tools": "npm run icons:sync",
+    "install:tools": "npm ci --prefix tools/kalorienrechner && npm ci --prefix tools/makrorechner && npm ci --prefix tools/dailytogether && npm ci --prefix tools/uebungen && npm ci --prefix tools/pedia",
+    "build:tools": "npm run build --prefix tools/kalorienrechner && npm run build --prefix tools/makrorechner && npm run build --prefix tools/dailytogether && npm run build --prefix tools/uebungen && npm run build --prefix tools/pedia",
+    "build": "npm run build:tools",
+    "deploy:prepare": "node scripts/prepare-deploy.mjs"
+  },
+  "devDependencies": {
+    "lucide-static": "^1.21.0"
+  }
+}

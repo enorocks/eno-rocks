@@ -1,0 +1,36 @@
+/* ENO · Footer (Hub + Tools) */
+
+.eno-foot {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--eno-line);
+    text-align: center;
+    color: var(--eno-muted);
+    font-size: 0.86rem;
+}
+
+.eno-foot-inner {
+    width: min(100%, var(--eno-max));
+    margin: 0 auto;
+    padding:
+        0 max(20px, env(safe-area-inset-right))
+        max(28px, env(safe-area-inset-bottom))
+        max(20px, env(safe-area-inset-left));
+}
+
+.eno-foot-line {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.eno-foot a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.eno-foot a:hover,
+.eno-foot a:focus-visible {
+    color: var(--eno-text);
+    text-decoration: underline;
+    outline: none;
+}

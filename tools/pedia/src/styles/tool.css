@@ -1,0 +1,587 @@
+/* eno · enoPedia */
+
+@import "../../../../shared/css/eno-tokens.css";
+@import "../../../../shared/css/eno-fonts.css";
+@import "../../../../shared/css/eno-footer.css";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--eno-font);
+    color: var(--eno-text);
+    line-height: 1.55;
+    background: var(--eno-bg);
+}
+
+.eno-tool {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.eno-tool a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.eno-panel {
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: var(--eno-surface);
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.pedia-popular {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.pedia-tool-links {
+    margin: 0 0 16px;
+    padding: 14px 16px;
+    border: 1px solid color-mix(in srgb, var(--eno-tool-enzyklopaedie) 22%, var(--eno-line));
+    border-radius: var(--eno-radius-md);
+    background: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 5%, var(--eno-surface));
+}
+
+.pedia-tool-links p {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--eno-muted);
+}
+
+.pedia-tool-links-anchor {
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 82%, var(--eno-text));
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.pedia-tool-links-anchor:hover,
+.pedia-tool-links-anchor:focus-visible {
+    text-decoration: underline;
+    outline: none;
+}
+
+.pedia-tool-links-sep {
+    margin: 0 0.35em;
+    color: var(--eno-line);
+}
+
+.pedia-popular h2 {
+    margin: 0;
+    color: var(--eno-muted);
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.pedia-popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pedia-popular-link {
+    min-height: 38px;
+    padding: 7px 13px;
+    border: 1px solid color-mix(in srgb, var(--eno-tool-enzyklopaedie) 28%, var(--eno-line));
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 6%, var(--eno-surface));
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 74%, var(--eno-text));
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.pedia-popular-link:hover,
+.pedia-popular-link:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 60%, var(--eno-line));
+    background: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 12%, #fff);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.pedia-related {
+    margin-top: 10px;
+}
+
+.pedia-related-label {
+    margin: 0 0 6px;
+    color: var(--eno-muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.pedia-related-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.pedia-related-link {
+    padding: 6px 10px;
+    border: 1px solid var(--eno-line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--eno-text);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pedia-related-link:hover,
+.pedia-related-link:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 45%, var(--eno-line));
+    outline: none;
+}
+
+.pedia-search-panel {
+    display: grid;
+    gap: 16px;
+}
+
+.pedia-search {
+    display: grid;
+    gap: 8px;
+}
+
+.pedia-search span {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--eno-muted);
+}
+
+.pedia-search input {
+    width: 100%;
+    min-height: 56px;
+    padding: 14px 16px;
+    border: 1px solid var(--eno-line);
+    border-radius: 14px;
+    background: #fff;
+    color: var(--eno-text);
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 650;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pedia-search input:focus {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 55%, var(--eno-line));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--eno-tool-enzyklopaedie) 14%, transparent);
+}
+
+.pedia-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pedia-chip,
+.pedia-reset {
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--eno-line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--eno-text);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.pedia-chip:hover,
+.pedia-chip:focus-visible,
+.pedia-reset:hover,
+.pedia-reset:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 45%, var(--eno-line));
+    outline: none;
+}
+
+.pedia-chip:hover,
+.pedia-reset:hover {
+    transform: translateY(-1px);
+}
+
+.pedia-chip.is-active {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 55%, var(--eno-line));
+    background: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 12%, #fff);
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 78%, var(--eno-text));
+}
+
+.pedia-result-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 12px;
+    color: var(--eno-muted);
+    font-size: 0.9rem;
+}
+
+.pedia-result-head p {
+    margin: 0;
+}
+
+.pedia-result-head strong {
+    color: var(--eno-text);
+    font-size: 1.05rem;
+}
+
+.pedia-result-head span {
+    margin-left: 6px;
+}
+
+#pedia-results {
+    margin-bottom: 28px;
+}
+
+.pedia-disclaimer {
+    margin-top: 0;
+}
+
+.pedia-sections {
+    display: grid;
+    gap: 34px;
+}
+
+.pedia-search-results {
+    gap: 28px;
+}
+
+.pedia-search-group-title {
+    margin: 0 0 12px;
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 78%, var(--eno-text));
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.pedia-search-group + .pedia-search-group {
+    padding-top: 8px;
+    border-top: 1px solid var(--eno-line);
+}
+
+.pedia-letter-section {
+    scroll-margin-top: 78px;
+}
+
+.pedia-letter-section > summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.pedia-letter-section > summary::-webkit-details-marker {
+    display: none;
+}
+
+.pedia-letter-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--eno-line);
+}
+
+.pedia-letter-heading::before {
+    content: "▾";
+    flex-shrink: 0;
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 72%, var(--eno-muted));
+    font-size: 0.95rem;
+    font-weight: 900;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.pedia-letter-section:not([open]) > summary::before {
+    transform: rotate(-90deg);
+}
+
+.pedia-letter-section:not([open]) .pedia-list {
+    display: none;
+}
+
+.pedia-letter-heading h2 {
+    margin: 0;
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 82%, var(--eno-text));
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.pedia-letter-heading span {
+    color: var(--eno-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.pedia-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.pedia-card {
+    position: relative;
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    min-height: 0;
+    padding: 18px 18px 18px 22px;
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: var(--eno-surface);
+    overflow: hidden;
+    scroll-margin-top: 86px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pedia-card.is-highlighted {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 70%, var(--eno-line));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--eno-tool-enzyklopaedie) 13%, transparent);
+}
+
+.pedia-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    bottom: 14px;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--eno-tool-enzyklopaedie);
+}
+
+.pedia-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.pedia-card-heading {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+}
+
+.pedia-card-permalink {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--eno-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--eno-muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.pedia-card-permalink:hover,
+.pedia-card-permalink:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 55%, var(--eno-line));
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 78%, var(--eno-text));
+    background: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 8%, #fff);
+    outline: none;
+}
+
+.pedia-alpha {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 0 0 14px;
+    padding: 10px 0;
+    background: color-mix(in srgb, var(--eno-bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+}
+
+.pedia-alpha-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.pedia-alpha-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 6px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--eno-muted);
+    font: inherit;
+    font-size: 0.76rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.pedia-alpha-link:not(.is-disabled):hover,
+.pedia-alpha-link:not(.is-disabled):focus-visible {
+    border-color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 45%, var(--eno-line));
+    background: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 10%, #fff);
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 78%, var(--eno-text));
+    outline: none;
+}
+
+.pedia-alpha-link.is-disabled {
+    opacity: 0.28;
+    cursor: default;
+}
+
+.pedia-tool-link {
+    margin: 0;
+}
+
+.pedia-tool-link-anchor {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 82%, var(--eno-text));
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.pedia-tool-link-anchor:hover,
+.pedia-tool-link-anchor:focus-visible {
+    color: var(--eno-text);
+    outline: none;
+}
+
+.pedia-card-category {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--eno-tool-enzyklopaedie) 72%, var(--eno-muted));
+}
+
+.pedia-card h2 {
+    margin: 0;
+    font-size: 1.12rem;
+    font-weight: 850;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+.pedia-card-desc {
+    margin: 0;
+    color: var(--eno-muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.pedia-aliases {
+    align-self: end;
+    margin: 0;
+    padding-top: 2px;
+    color: color-mix(in srgb, var(--eno-muted) 86%, var(--eno-text));
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.pedia-empty {
+    display: grid;
+    justify-items: start;
+    gap: 10px;
+}
+
+.pedia-empty h2,
+.eno-disclaimer h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+}
+
+.pedia-empty p,
+.eno-disclaimer p {
+    margin: 0;
+    color: var(--eno-muted);
+    font-size: 0.9rem;
+}
+
+.eno-tool-inner > .eno-foot {
+    margin-top: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pedia-search input,
+    .pedia-chip,
+    .pedia-reset,
+    .pedia-popular-link,
+    .pedia-card {
+        transition: none;
+    }
+
+    .pedia-chip:hover,
+    .pedia-reset:hover {
+        transform: none;
+    }
+
+    .pedia-letter-heading::before {
+        transition: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .pedia-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .eno-panel {
+        padding: 16px;
+    }
+
+    .pedia-search input {
+        min-height: 52px;
+    }
+
+    .pedia-popular-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pedia-popular-link {
+        width: 100%;
+        text-align: left;
+    }
+
+    .pedia-card {
+        min-height: 0;
+        padding: 16px 16px 16px 20px;
+    }
+}

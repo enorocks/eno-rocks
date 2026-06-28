@@ -1,0 +1,154 @@
+/* ENO · Legal pages (Impressum, Datenschutz) */
+
+@import url("shared/css/eno-tokens.css");
+@import url("shared/css/eno-fonts.css");
+@import url("shared/css/eno-footer.css");
+@import url("shared/css/eno-tool-shell.css");
+
+.eno-legal-page,
+.eno-legal-page * {
+    box-sizing: border-box;
+}
+
+.eno-legal-page {
+    font-family: var(--eno-font);
+    color: var(--eno-text);
+    line-height: 1.55;
+    background: var(--eno-bg);
+}
+
+/* Header wie Hub/Tools – nicht von Legal-Link-Styles überschreiben */
+
+.eno-legal-page .eno-hub-wordmark,
+.eno-legal-page .eno-hub-wordmark a {
+    font-family: var(--eno-font);
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--eno-text);
+}
+
+.eno-legal-page .eno-hub-wordmark a:hover,
+.eno-legal-page .eno-hub-wordmark a:focus-visible {
+    color: var(--eno-accent-dark);
+    outline: none;
+}
+
+.eno-legal-page .eno-hub-tagline {
+    font-family: var(--eno-font);
+}
+
+.eno-legal a {
+    color: var(--eno-accent-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.eno-legal a:hover,
+.eno-legal a:focus-visible {
+    color: var(--eno-accent);
+    outline: none;
+}
+
+.eno-legal-page .eno-foot a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+}
+
+.eno-legal-page .eno-foot a:hover,
+.eno-legal-page .eno-foot a:focus-visible {
+    color: var(--eno-text);
+    text-decoration: underline;
+    outline: none;
+}
+
+.eno-legal {
+    padding-bottom: 8px;
+}
+
+.eno-legal h1 {
+    margin: 0 0 20px;
+    font-size: clamp(1.65rem, 4.5vw, 2rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.eno-legal h2 {
+    margin: 28px 0 10px;
+    font-size: 1.15rem;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+}
+
+.eno-legal h3 {
+    margin: 18px 0 8px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.eno-legal h4 {
+    margin: 14px 0 6px;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.eno-legal p,
+.eno-legal li {
+    margin: 0 0 12px;
+    color: var(--eno-muted);
+    font-size: 0.94rem;
+}
+
+.eno-legal ul {
+    margin: 0 0 12px;
+    padding-left: 1.25rem;
+}
+
+.eno-legal li {
+    margin-bottom: 6px;
+}
+
+.eno-legal strong {
+    color: var(--eno-text);
+    font-weight: 700;
+}
+
+.eno-legal code {
+    font-size: 0.88em;
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--eno-line) 40%, var(--eno-bg));
+    color: var(--eno-text);
+}
+
+.eno-legal-note {
+    margin-top: 24px;
+    padding: 14px 16px;
+    border: 1px solid var(--eno-line);
+    border-radius: 12px;
+    background: var(--eno-surface);
+    font-size: 0.88rem !important;
+}
+
+.eno-legal-sites {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.eno-legal-sites li {
+    margin: 0 0 6px;
+    padding-left: 0;
+}
+
+.eno-legal-sites li::before {
+    content: "» ";
+    color: var(--eno-accent-dark);
+    font-weight: 700;
+}
+
+.eno-legal-page > .eno-foot {
+    margin-top: auto;
+}

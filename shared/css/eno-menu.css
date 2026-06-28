@@ -1,0 +1,15 @@
+/**
+ * ENO · Zentrales Menü-CSS (Hub, Tools, Legal)
+ *
+ * Eine Datei verlinken, fertig — kein Rebuild der Tools nötig:
+ *   <link rel="stylesheet" href="/shared/css/eno-menu.css">
+ *
+ * Geändert wird in shared/css/ (site-nav, accents, brand, tokens).
+ */
+
+@import "./eno-tokens.css";
+@import "./eno-icons.css";
+@import "./eno-brand.css";
+@import "./eno-site-nav.css";
+@import "./eno-tool-shell.css";
+@import "./eno-tool-page.css";

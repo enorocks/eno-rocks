@@ -1,0 +1,415 @@
+/* ENO.rocks · Hub (Design B) */
+
+@import url("shared/css/eno-tokens.css");
+@import url("shared/css/eno-fonts.css");
+@import url("shared/css/eno-icons.css");
+@import url("shared/css/eno-footer.css");
+@import url("shared/css/eno-tool-accents.css");
+@import url("shared/css/eno-tool-shell.css");
+
+.eno-hub,
+.eno-hub * {
+    box-sizing: border-box;
+}
+
+.eno-hub {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--eno-font);
+    color: var(--eno-text);
+    line-height: 1.55;
+    background: var(--eno-bg);
+}
+
+.eno-hub a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Content Creator Panel */
+
+.eno-hub-creator {
+    position: relative;
+    margin-bottom: 0;
+    border-radius: calc(var(--eno-radius-md) + 4px);
+    border: 2px solid color-mix(in srgb, var(--eno-accent) 28%, var(--eno-line));
+    background:
+        linear-gradient(
+            145deg,
+            color-mix(in srgb, var(--eno-accent) 6%, var(--eno-surface)) 0%,
+            var(--eno-surface) 42%,
+            color-mix(in srgb, var(--eno-tool-dailytogether) 8%, var(--eno-surface)) 100%
+        );
+    box-shadow:
+        0 1px 0 color-mix(in srgb, #fff 80%, transparent) inset,
+        0 12px 40px color-mix(in srgb, var(--eno-dark) 8%, transparent);
+    overflow: hidden;
+}
+
+.eno-hub-creator-accent {
+    position: absolute;
+    top: -40%;
+    right: -8%;
+    width: min(280px, 55vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        color-mix(in srgb, var(--eno-accent) 18%, transparent) 0%,
+        transparent 68%
+    );
+    pointer-events: none;
+}
+
+.eno-hub-creator-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(140px, 200px);
+    align-items: stretch;
+    gap: 0;
+    padding: 20px 22px;
+}
+
+.eno-hub-creator-profile {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 10px 18px;
+    align-items: start;
+    min-width: 0;
+    padding-right: 20px;
+}
+
+.eno-hub-creator-avatar {
+    grid-row: 1 / -1;
+    align-self: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid #fff;
+    box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--eno-accent) 35%, var(--eno-line)),
+        0 6px 20px color-mix(in srgb, var(--eno-dark) 12%, transparent);
+}
+
+.eno-hub-creator-name {
+    margin: 0;
+    padding-top: 4px;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--eno-text);
+}
+
+.eno-hub-creator-bio {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--eno-muted);
+    max-width: none;
+}
+
+.eno-hub-creator-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding-left: 20px;
+    border-left: 1px solid color-mix(in srgb, var(--eno-accent) 18%, var(--eno-line));
+}
+
+.eno-hub-creator-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 14px;
+    font-size: 0.94rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eno-hub a.eno-hub-creator-btn {
+    color: #fff;
+}
+
+.eno-hub-creator-btn svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.eno-hub-creator-btn--tt {
+    background: var(--eno-dark);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--eno-dark) 18%, transparent);
+}
+
+.eno-hub-creator-btn--tt:hover,
+.eno-hub-creator-btn--tt:focus-visible {
+    background: #2a2826;
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--eno-dark) 24%, transparent);
+}
+
+/* Hub sections */
+
+.eno-hub-section {
+    margin-top: 24px;
+}
+
+.eno-hub-section-title {
+    margin: 0 0 12px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--eno-muted);
+}
+
+/* Body */
+
+.eno-hub-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.eno-hub-body-inner {
+    width: min(100%, var(--eno-max));
+    margin: 0 auto;
+    padding:
+        16px
+        max(20px, env(safe-area-inset-right))
+        24px
+        max(20px, env(safe-area-inset-left));
+    flex: 1;
+}
+
+/* Two-column grid */
+
+.eno-hub-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.eno-hub-card--wide {
+    width: 100%;
+}
+
+.eno-hub-grid-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.eno-hub-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 100%;
+    padding: 16px 16px 52px;
+    border: 1.5px solid color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 32%, var(--eno-line));
+    border-radius: var(--eno-radius-md);
+    background: var(--eno-surface);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.eno-hub-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.eno-hub-card-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--eno-item-accent, var(--eno-accent));
+    color: #fff;
+}
+
+.eno-hub-card-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.eno-hub-card-go .eno-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.eno-hub-card:hover,
+.eno-hub-card:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 55%, var(--eno-line));
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--eno-dark) 7%, transparent);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.eno-hub-card-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--eno-item-accent, var(--eno-text));
+}
+
+.eno-hub-card-desc {
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: var(--eno-muted);
+    line-height: 1.45;
+}
+
+.eno-hub-card-go {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 45%, var(--eno-line));
+    border-radius: 50%;
+    color: var(--eno-item-accent, var(--eno-accent));
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.eno-hub-card-go svg {
+    width: 14px;
+    height: 14px;
+}
+
+.eno-hub-card:hover .eno-hub-card-go,
+.eno-hub-card:focus-visible .eno-hub-card-go {
+    transform: translateX(2px);
+    border-color: var(--eno-item-accent, var(--eno-accent));
+    background: color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 8%, #fff);
+}
+
+.eno-hub-card--soon {
+    cursor: default;
+    background: color-mix(in srgb, var(--eno-muted) 4%, var(--eno-surface));
+    border-style: dashed;
+    border-color: color-mix(in srgb, var(--eno-muted) 28%, var(--eno-line));
+    padding-bottom: 16px;
+}
+
+.eno-hub-card--soon .eno-hub-card-icon {
+    background: color-mix(in srgb, var(--eno-muted) 45%, var(--eno-line));
+}
+
+.eno-hub-card--soon .eno-hub-card-title {
+    color: var(--eno-muted);
+}
+
+.eno-hub-card--soon .eno-hub-card-desc {
+    font-style: italic;
+}
+
+.eno-hub-card--uebungen.eno-hub-card--soon {
+    border-color: color-mix(in srgb, var(--eno-tool-uebungen) 35%, var(--eno-line));
+}
+
+.eno-hub-card--uebungen.eno-hub-card--soon .eno-hub-card-icon {
+    background: color-mix(in srgb, var(--eno-tool-uebungen) 72%, var(--eno-muted));
+}
+
+.eno-hub-card--uebungen.eno-hub-card--soon .eno-hub-card-title {
+    color: color-mix(in srgb, var(--eno-tool-uebungen) 70%, var(--eno-muted));
+}
+
+.eno-hub-card-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0.15em 0.55em;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--eno-line) 55%, var(--eno-bg));
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--eno-muted);
+    vertical-align: middle;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .eno-hub-creator-btn,
+    .eno-hub-card,
+    .eno-hub-card-go {
+        transition: none;
+    }
+
+    .eno-hub-creator-btn:hover,
+    .eno-hub-creator-btn:focus-visible,
+    .eno-hub-card:hover,
+    .eno-hub-card:focus-visible {
+        transform: none;
+    }
+
+    .eno-hub-card:hover .eno-hub-card-go,
+    .eno-hub-card:focus-visible .eno-hub-card-go {
+        transform: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .eno-hub-creator-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 18px 16px 20px;
+    }
+
+    .eno-hub-creator-profile {
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 8px 14px;
+        padding-right: 0;
+    }
+
+    .eno-hub-creator-avatar {
+        width: 72px;
+        height: 72px;
+        grid-row: 1 / 3;
+    }
+
+    .eno-hub-creator-name {
+        padding-top: 2px;
+    }
+
+    .eno-hub-creator-actions {
+        padding-left: 0;
+        border-left: none;
+        padding-top: 4px;
+        border-top: 1px solid color-mix(in srgb, var(--eno-accent) 18%, var(--eno-line));
+    }
+
+    .eno-hub-grid-row {
+        grid-template-columns: 1fr;
+    }
+
+    .eno-hub-card {
+        padding-bottom: 16px;
+        padding-right: 16px;
+    }
+
+    .eno-hub-card-go {
+        display: none;
+    }
+}

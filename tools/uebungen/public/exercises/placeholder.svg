@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="�bungsbild folgt">
+  <rect width="800" height="500" fill="#ded1c1"/>
+  <rect x="48" y="48" width="704" height="404" rx="24" fill="#fffaf2" stroke="#c4b5a3" stroke-width="2"/>
+  <circle cx="400" cy="200" r="56" fill="#ded1c1"/>
+  <rect x="320" y="280" width="160" height="16" rx="8" fill="#ded1c1"/>
+  <rect x="280" y="320" width="240" height="12" rx="6" fill="#e8ddd0"/>
+  <text x="400" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#6f675f">Bild folgt</text>
+</svg>

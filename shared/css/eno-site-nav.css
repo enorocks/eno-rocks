@@ -1,0 +1,176 @@
+/* ENO · Site navigation (Hamburger dropdown) */
+
+@import "./eno-tool-accents.css";
+
+.eno-brand-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.eno-brand-bar__identity {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.eno-brand-bar .eno-hub-wordmark {
+    margin: 0;
+}
+
+.eno-tool-brand {
+    margin-bottom: 0;
+}
+
+.eno-tool-brand .eno-hub-tagline {
+    margin: 10px 0 4px;
+    font-size: clamp(0.95rem, 3.5vw, 1.08rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    color: var(--eno-muted);
+}
+
+.eno-tool-top,
+.eno-hub-brand {
+    overflow: visible;
+}
+
+.eno-site-nav {
+    position: relative;
+    flex: 0 0 auto;
+    z-index: 40;
+}
+
+.eno-site-nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--eno-line);
+    border-radius: 10px;
+    background: var(--eno-surface);
+    color: var(--eno-text);
+    font: inherit;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.eno-site-nav__toggle:hover,
+.eno-site-nav__toggle:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-accent) 45%, var(--eno-line));
+    color: var(--eno-accent-dark);
+    outline: none;
+}
+
+/* 3 bars via box-shadow – stays centered in the square button */
+.eno-site-nav__icon {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.eno-site-nav.is-open .eno-site-nav__icon {
+    box-shadow: none;
+    transform: rotate(45deg);
+}
+
+.eno-site-nav.is-open .eno-site-nav__icon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    border-radius: 999px;
+    transform: rotate(-90deg);
+}
+
+.eno-site-nav__panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(300px, calc(100vw - 32px));
+    max-height: min(70dvh, 480px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 10px;
+    border: 1px solid var(--eno-line);
+    border-radius: 12px;
+    background: var(--eno-surface);
+    color: var(--eno-text);
+    box-shadow: 0 12px 36px rgb(25 24 23 / 14%);
+}
+
+.eno-site-nav__panel[hidden] {
+    display: none;
+}
+
+.eno-site-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.eno-site-nav__item + .eno-site-nav__item {
+    margin-top: 2px;
+}
+
+.eno-site-nav__item a,
+.eno-site-nav__soon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 40px;
+    padding: 0 10px 0 18px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--eno-text);
+    text-decoration: none;
+}
+
+.eno-site-nav__item a::before,
+.eno-site-nav__soon::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    width: 3px;
+    height: 16px;
+    border-radius: 999px;
+    background: var(--eno-item-accent, var(--eno-muted));
+    transform: translateY(-50%);
+}
+
+.eno-site-nav__item a:hover,
+.eno-site-nav__item a:focus-visible {
+    background: color-mix(in srgb, var(--eno-item-accent, var(--eno-line)) 12%, var(--eno-bg));
+    color: var(--eno-text);
+    outline: none;
+}
+
+.eno-site-nav__item.is-soon .eno-site-nav__soon {
+    color: var(--eno-muted);
+}
+
+.eno-site-nav__badge {
+    flex: 0 0 auto;
+    padding: 0.15em 0.55em;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--eno-line) 55%, var(--eno-bg));
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--eno-muted);
+}

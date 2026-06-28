@@ -1,0 +1,66 @@
+/* ENO · Tool-Akzentfarben (Hub-Cards + Nav-Einträge + Tool-Seiten) */
+
+.eno-site-nav__item[data-eno-nav-id="hub"],
+.eno-site-nav__item--hub,
+.eno-hub-card--hub,
+.eno-tool--hub {
+    --eno-item-accent: var(--eno-tool-hub);
+    --eno-accent: var(--eno-tool-hub);
+    --eno-accent-dark: #124838;
+}
+
+.eno-site-nav__item[data-eno-nav-id="dailytogether"],
+.eno-site-nav__item--dailytogether,
+.eno-hub-card--dailytogether,
+.eno-tool--dailytogether {
+    --eno-item-accent: var(--eno-tool-dailytogether);
+    --eno-accent: var(--eno-tool-dailytogether);
+    --eno-accent-dark: color-mix(in srgb, var(--eno-tool-dailytogether) 68%, #000);
+    --dt-primary: var(--eno-tool-dailytogether);
+}
+
+.eno-site-nav__item[data-eno-nav-id="kalorienrechner"],
+.eno-site-nav__item--kalorienrechner,
+.eno-hub-card--kalorienrechner,
+.eno-tool--kalorienrechner {
+    --eno-item-accent: var(--eno-tool-kalorienrechner);
+    --eno-accent: var(--eno-tool-kalorienrechner);
+    --eno-accent-dark: color-mix(in srgb, var(--eno-tool-kalorienrechner) 68%, #000);
+}
+
+.eno-site-nav__item[data-eno-nav-id="makrorechner"],
+.eno-site-nav__item--makrorechner,
+.eno-hub-card--makrorechner,
+.eno-tool--makrorechner {
+    --eno-item-accent: var(--eno-tool-makrorechner);
+    --eno-accent: var(--eno-tool-makrorechner);
+    --eno-accent-dark: color-mix(in srgb, var(--eno-tool-makrorechner) 68%, #000);
+}
+
+.eno-site-nav__item[data-eno-nav-id="uebungen"],
+.eno-site-nav__item--uebungen,
+.eno-hub-card--uebungen,
+.eno-tool--uebungen {
+    --eno-item-accent: var(--eno-tool-uebungen);
+    --eno-accent: var(--eno-tool-uebungen);
+    --eno-accent-dark: color-mix(in srgb, var(--eno-tool-uebungen) 68%, #000);
+}
+
+.eno-site-nav__item[data-eno-nav-id="pedia"],
+.eno-site-nav__item--pedia,
+.eno-hub-card--pedia,
+.eno-tool--pedia {
+    --eno-item-accent: var(--eno-tool-pedia);
+    --eno-accent: var(--eno-tool-pedia);
+    --eno-accent-dark: color-mix(in srgb, var(--eno-tool-pedia) 68%, #000);
+    --eno-tool-enzyklopaedie: var(--eno-tool-pedia);
+}
+
+.eno-site-nav__item[data-eno-nav-id="patreon"],
+.eno-site-nav__item--patreon,
+.eno-hub-card--patreon,
+.eno-tool--patreon {
+    --eno-item-accent: var(--eno-tool-patreon);
+    --eno-accent: var(--eno-tool-patreon);
+    --eno-accent-dark: #000000;
+}

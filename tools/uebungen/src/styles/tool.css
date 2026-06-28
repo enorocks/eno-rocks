@@ -1,0 +1,407 @@
+/* ENO · enoExercises */
+
+@import "../../../../shared/css/eno-tokens.css";
+@import "../../../../shared/css/eno-fonts.css";
+@import "../../../../shared/css/eno-footer.css";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--eno-font);
+    color: var(--eno-text);
+    line-height: 1.55;
+    background: var(--eno-bg);
+}
+
+.eno-tool {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.eno-tool a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.eno-panel {
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: var(--eno-surface);
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.eno-disclaimer h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+}
+
+.eno-disclaimer p {
+    margin: 0;
+    color: var(--eno-muted);
+    font-size: 0.9rem;
+}
+
+.exo-wizard {
+    display: grid;
+    gap: 16px;
+}
+
+.exo-wizard-step {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--eno-muted);
+}
+
+.exo-question {
+    margin: 0;
+    font-size: clamp(1.35rem, 4vw, 1.65rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.exo-choices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.exo-choice-btn {
+    min-height: 52px;
+    padding: 12px 14px;
+    border: 1px solid var(--eno-line);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--eno-text);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.exo-choice-btn:hover,
+.exo-choice-btn:focus-visible,
+.exo-choice-btn.is-active {
+    border-color: color-mix(in srgb, var(--eno-accent) 45%, var(--eno-line));
+    outline: none;
+}
+
+.exo-choice-btn:hover {
+    transform: translateY(-1px);
+}
+
+.exo-choice-btn.is-active {
+    background: color-mix(in srgb, var(--eno-accent) 10%, #fff);
+    color: var(--eno-accent-dark);
+}
+
+.exo-wizard-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0;
+    color: var(--eno-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.exo-wizard-divider::before,
+.exo-wizard-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--eno-line);
+}
+
+.exo-fullbody-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+    min-height: 72px;
+    padding: 16px 18px;
+    border: 2px solid color-mix(in srgb, var(--eno-tool-uebungen) 35%, var(--eno-line));
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--eno-tool-uebungen) 8%, #fff);
+    color: var(--eno-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exo-fullbody-btn:hover,
+.exo-fullbody-btn:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-tool-uebungen) 55%, var(--eno-line));
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--eno-dark) 6%, transparent);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.exo-fullbody-btn-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.exo-fullbody-btn-desc {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--eno-muted);
+    line-height: 1.35;
+}
+
+.exo-filter-chip--static {
+    cursor: default;
+    background: color-mix(in srgb, var(--eno-line) 35%, var(--eno-bg));
+}
+
+.exo-back-btn {
+    justify-self: start;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--eno-line);
+    border-radius: 12px;
+    background: var(--eno-surface);
+    color: var(--eno-text);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.exo-back-btn:hover,
+.exo-back-btn:focus-visible {
+    border-color: color-mix(in srgb, var(--eno-accent) 45%, var(--eno-line));
+    outline: none;
+}
+
+.exo-results {
+    display: grid;
+    gap: 14px;
+}
+
+.exo-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.exo-filter-chip {
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--eno-line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--eno-text);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.exo-filter-chip:hover,
+.exo-filter-chip:focus-visible,
+.exo-filter-chip.is-active {
+    border-color: color-mix(in srgb, var(--eno-accent) 45%, var(--eno-line));
+    outline: none;
+}
+
+.exo-filter-chip.is-active {
+    background: color-mix(in srgb, var(--eno-accent) 10%, #fff);
+    color: var(--eno-accent-dark);
+}
+
+.exo-inline-picker {
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+}
+
+.exo-inline-picker-label {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--eno-muted);
+}
+
+.exo-result-meta {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--eno-muted);
+}
+
+.exo-empty p {
+    margin: 0;
+}
+
+.exo-empty-hint {
+    margin-top: 8px !important;
+    font-size: 0.9rem;
+    color: var(--eno-muted);
+}
+
+.exo-list {
+    display: grid;
+    gap: 16px;
+}
+
+.exo-card {
+    overflow: hidden;
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: var(--eno-surface);
+}
+
+.exo-card-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: color-mix(in srgb, var(--eno-line) 35%, var(--eno-bg));
+}
+
+.exo-card-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exo-card-image-fallback {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    text-align: center;
+    padding: 16px;
+}
+
+.exo-card-image-label {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.exo-card-image-hint {
+    font-size: 0.82rem;
+    color: var(--eno-muted);
+}
+
+.exo-card-body {
+    padding: 16px 16px 18px;
+}
+
+.exo-card-head {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.exo-card-permalink {
+    margin-left: auto;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--eno-muted);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.exo-card-permalink:hover,
+.exo-card-permalink:focus-visible {
+    background: color-mix(in srgb, var(--eno-tool-uebungen) 10%, #fff);
+    color: var(--eno-tool-uebungen);
+    outline: none;
+}
+
+.exo-card.is-highlighted {
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--eno-tool-uebungen) 55%, transparent);
+}
+
+.exo-pedia-links p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--eno-muted);
+}
+
+.exo-pedia-links p + p {
+    margin-top: 8px;
+}
+
+.exo-card-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--eno-dark);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.exo-card-title {
+    margin: 0;
+    font-size: 1.12rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+.exo-cues {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--eno-muted);
+    font-size: 0.92rem;
+}
+
+.exo-cues li + li {
+    margin-top: 6px;
+}
+
+.eno-tool-inner > .eno-foot {
+    margin-top: 24px;
+}
+
+@media (max-width: 560px) {
+    .eno-panel {
+        padding: 16px;
+    }
+
+    .exo-choices {
+        grid-template-columns: 1fr;
+    }
+
+    .exo-card-body {
+        padding: 14px;
+    }
+}
+
+@media (min-width: 640px) {
+    .exo-choices {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

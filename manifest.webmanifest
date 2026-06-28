@@ -1,0 +1,31 @@
+{
+  "name": "eno.rocks",
+  "short_name": "eno.rocks",
+  "description": "Kostenlose Tools und Projekte von Einfach nur Olli.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#1f6f5b",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "/assets/eno-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/eno-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/eno-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
