@@ -6,8 +6,8 @@
     "og:generate": "node scripts/generate-og-images.mjs",
     "sitemap:generate": "node scripts/generate-sitemap.mjs",
     "prebuild:tools": "npm run icons:sync && npm run og:generate && npm run sitemap:generate",
-    "install:tools": "npm ci --prefix tools/kalorienrechner && npm ci --prefix tools/makrorechner && npm ci --prefix tools/dailytogether && npm ci --prefix tools/uebungen && npm ci --prefix tools/pedia",
-    "build:tools": "npm run build --prefix tools/kalorienrechner && npm run build --prefix tools/makrorechner && npm run build --prefix tools/dailytogether && npm run build --prefix tools/uebungen && npm run build --prefix tools/pedia",
+    "install:tools": "npm ci --prefix tools/kalorienrechner && npm ci --prefix tools/makrorechner && npm ci --prefix tools/dailytogether && npm ci --prefix tools/uebungen && npm ci --prefix tools/pedia && npm ci --prefix tools/guide",
+    "build:tools": "npm run build --prefix tools/kalorienrechner && npm run build --prefix tools/makrorechner && npm run build --prefix tools/dailytogether && npm run build --prefix tools/uebungen && npm run build --prefix tools/pedia && npm run build --prefix tools/guide",
     "build": "npm run build:tools",
     "deploy:prepare": "node scripts/prepare-deploy.mjs"
   },

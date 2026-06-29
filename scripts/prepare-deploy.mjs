@@ -11,7 +11,7 @@ const ROOT_DIRS = ['assets', 'fonts', 'impressum', 'datenschutz'];
 
 const SHARED_DIRS = ['shared/css', 'shared/js', 'shared/vendor'];
 
-const TOOLS = ['kalorienrechner', 'makrorechner', 'dailytogether', 'uebungen', 'pedia'];
+const TOOLS = ['kalorienrechner', 'makrorechner', 'dailytogether', 'uebungen', 'pedia', 'guide'];
 
 async function copyInto(src, dest) {
     await mkdir(path.dirname(dest), { recursive: true });

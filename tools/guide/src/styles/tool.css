@@ -1,0 +1,344 @@
+/* eno · enoGuide */
+
+@import "../../../../shared/css/eno-tokens.css";
+@import "../../../../shared/css/eno-fonts.css";
+@import "../../../../shared/css/eno-footer.css";
+@import "../../../../shared/css/eno-tool-shell.css";
+@import "../../../../shared/css/eno-tool-page.css";
+
+:root {
+    --eno-tool-guide: #1f6f5b;
+}
+
+.eno-tool--guide {
+    --eno-accent: var(--eno-tool-guide);
+}
+
+body {
+    margin: 0;
+    font-family: var(--eno-font);
+    color: var(--eno-text);
+    background: var(--eno-bg);
+}
+
+.eno-tool a {
+    color: inherit;
+}
+
+.egd-draft-badge {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: color-mix(in srgb, var(--eno-tool-guide) 14%, #fff);
+    color: var(--eno-accent-dark);
+}
+
+.egd-lead {
+    margin: 0;
+    color: var(--eno-muted);
+}
+
+.egd-lead code {
+    font-size: 0.86em;
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid var(--eno-line);
+}
+
+.egd-back {
+    margin: 0 0 14px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-weight: 600;
+    color: var(--eno-accent);
+    cursor: pointer;
+}
+
+.egd-back:hover {
+    text-decoration: underline;
+}
+
+.egd-format-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.egd-format-tile {
+    display: block;
+    padding: 18px;
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.egd-format-tile:hover {
+    border-color: color-mix(in srgb, var(--eno-tool-guide) 40%, var(--eno-line));
+    box-shadow: 0 8px 24px rgb(25 24 23 / 6%);
+}
+
+.egd-format-tile-count {
+    display: inline-flex;
+    min-width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--eno-tool-guide) 12%, #fff);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.egd-format-tile-title {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+}
+
+.egd-format-tile-desc {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--eno-muted);
+}
+
+.egd-format-head h2 {
+    margin: 0 0 8px;
+}
+
+.egd-format-head p {
+    margin: 0;
+    color: var(--eno-muted);
+}
+
+.egd-count {
+    margin-top: 8px !important;
+    font-weight: 600;
+    color: var(--eno-text) !important;
+}
+
+.egd-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.egd-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--eno-line);
+    border-radius: var(--eno-radius-md);
+    background: #fff;
+    overflow: hidden;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.egd-card:hover {
+    border-color: color-mix(in srgb, var(--eno-tool-guide) 35%, var(--eno-line));
+    transform: translateY(-2px);
+}
+
+.egd-card-media {
+    aspect-ratio: 16 / 7;
+    background: var(--eno-bg);
+    overflow: hidden;
+}
+
+.egd-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.egd-card-body {
+    padding: 14px 16px 16px;
+}
+
+.egd-card-title {
+    margin: 8px 0 6px;
+    font-size: 1rem;
+}
+
+.egd-card-lead {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--eno-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.egd-card-meta {
+    margin: 8px 0 0;
+    font-size: 0.8rem;
+    color: var(--eno-muted);
+}
+
+.egd-format-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: color-mix(in srgb, var(--eno-tool-guide) 12%, #fff);
+    color: var(--eno-accent-dark);
+}
+
+.egd-hero {
+    position: relative;
+    border-radius: var(--eno-radius-md);
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--eno-line);
+}
+
+.egd-hero-img {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+    display: block;
+    min-height: 180px;
+    background: var(--eno-accent-dark);
+}
+
+.egd-hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 24px;
+    background: linear-gradient(to top, rgb(25 24 23 / 78%), transparent 55%);
+    color: #fff;
+}
+
+.egd-hero-overlay .egd-format-badge {
+    background: rgb(255 255 255 / 18%);
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.egd-hero-title {
+    margin: 0;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    line-height: 1.15;
+}
+
+.egd-hero-lead {
+    margin: 8px 0 0;
+    max-width: 52ch;
+    color: rgb(255 255 255 / 88%);
+}
+
+.egd-body p {
+    margin: 0 0 12px;
+    color: var(--eno-muted);
+}
+
+.egd-body p:last-child {
+    margin-bottom: 0;
+}
+
+.egd-items-title {
+    margin: 0 0 14px;
+    font-size: 1.05rem;
+}
+
+.egd-item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.egd-item {
+    padding: 14px 16px;
+    border: 1px solid var(--eno-line);
+    border-radius: 12px;
+    background: #fff;
+}
+
+.egd-item-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.egd-item-name {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.egd-item-used {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--eno-tool-guide) 14%, #fff);
+    color: var(--eno-accent-dark);
+}
+
+.egd-item-tags {
+    margin: 0 0 8px;
+    font-size: 0.8rem;
+    color: var(--eno-muted);
+}
+
+.egd-item-why {
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+.egd-item-comment {
+    margin: 8px 0 0;
+    font-size: 0.86rem;
+    color: var(--eno-muted);
+    font-style: italic;
+}
+
+.egd-recipe h2 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+
+.egd-recipe ul,
+.egd-recipe ol {
+    margin: 0 0 16px;
+    padding-left: 1.2rem;
+}
+
+.egd-recipe li + li {
+    margin-top: 6px;
+}
+
+.egd-tiktok {
+    margin: 16px 0 0;
+}
+
+.egd-tiktok a {
+    font-weight: 700;
+    color: var(--eno-accent);
+}
+
+@media (max-width: 640px) {
+    .egd-format-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .egd-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
