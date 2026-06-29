@@ -1,7 +1,6 @@
 import type { GuideFormat, GuidePost } from '../content/types';
 import { FORMATS, formatMeta } from '../content/formats';
 import { countByFormat, findPostById, postsForFormat } from '../content/index';
-import { renderEnoFooter } from '../../../../shared/ui/footer';
 import { renderToolBrandHeader } from '../../../../shared/ui/tool-header';
 import { mountEnoSiteNav } from '../../../../shared/ui/site-nav';
 
@@ -43,32 +42,61 @@ function parseView(): View {
     return { kind: 'home' };
 }
 
-function navigate(view: View): void {
-    if (view.kind === 'home') {
-        window.location.hash = '';
-        return;
-    }
+function activeFormat(view: View): GuideFormat | null {
     if (view.kind === 'format') {
-        window.location.hash = `format/${view.format}`;
-        return;
+        return view.format;
     }
-    window.location.hash = view.id;
-}
-
-function renderDraftBadge(): string {
-    return '<p class="egd-draft-badge">Entwurf · noch nicht öffentlich verlinkt</p>';
-}
-
-function renderBackLink(label: string, view: View): string {
-    return `<button type="button" class="egd-back" data-view="${escapeHtml(view.kind === 'home' ? '' : view.kind === 'format' ? `format/${view.format}` : view.id)}">← ${escapeHtml(label)}</button>`;
+    if (view.kind === 'post') {
+        return findPostById(view.id)?.format ?? null;
+    }
+    return null;
 }
 
 function renderFormatBadge(format: GuideFormat): string {
-    return `<span class="egd-format-badge egd-format-badge--${format}">${escapeHtml(formatMeta(format).label)}</span>`;
+    return `<span class="egd-pill egd-pill--${format}">${escapeHtml(formatMeta(format).label)}</span>`;
+}
+
+function renderTabBar(view: View): string {
+    const active = activeFormat(view);
+    const isHome = view.kind === 'home';
+
+    return `
+        <nav class="egd-tabbar" aria-label="Hauptnavigation">
+            <a class="egd-tab${isHome ? ' is-active' : ''}" href="#">
+                <span class="egd-tab-icon" aria-hidden="true">⌂</span>
+                <span class="egd-tab-label">Start</span>
+            </a>
+            ${FORMATS.map(
+                (format) => `
+                <a
+                    class="egd-tab egd-tab--${format.id}${active === format.id ? ' is-active' : ''}"
+                    href="#format/${format.id}"
+                >
+                    <span class="egd-tab-icon" aria-hidden="true">${formatIcon(format.id)}</span>
+                    <span class="egd-tab-label">${escapeHtml(format.shortLabel)}</span>
+                </a>
+            `,
+            ).join('')}
+        </nav>
+    `;
+}
+
+function formatIcon(format: GuideFormat): string {
+    switch (format) {
+        case 'toplist':
+            return '★';
+        case 'recipe':
+            return '◆';
+        case 'thoughts':
+            return '◎';
+        case 'tip':
+            return '✦';
+    }
 }
 
 function renderPostCard(post: GuidePost): string {
     const src = headerSrc(post);
+    const preview = post.lead ?? post.items?.[0]?.text ?? post.body?.[0] ?? '';
     return `
         <a class="egd-card" href="#${escapeHtml(post.id)}">
             <div class="egd-card-media">
@@ -77,34 +105,47 @@ function renderPostCard(post: GuidePost): string {
             <div class="egd-card-body">
                 ${renderFormatBadge(post.format)}
                 <h2 class="egd-card-title">${escapeHtml(post.title)}</h2>
-                ${post.lead ? `<p class="egd-card-lead">${escapeHtml(post.lead)}</p>` : ''}
+                <p class="egd-card-preview">${escapeHtml(preview)}</p>
                 ${post.items ? `<p class="egd-card-meta">${post.items.length} Einträge</p>` : ''}
             </div>
+            <span class="egd-card-chevron" aria-hidden="true">›</span>
         </a>
     `;
 }
 
 function renderHome(): string {
     const counts = countByFormat();
+    const total = Object.values(counts).reduce((sum, n) => sum + n, 0);
+
     return `
-        <section class="eno-panel egd-intro">
-            ${renderDraftBadge()}
-            <h2>Deine TikTok-Formate — als Text</h2>
-            <p class="egd-lead">
-                Top-Listen, Rezepte, Gedanken und Tipps. Content pflegst du in
-                <code>tools/guide/src/content/posts/</code> — Headbild in <code>public/headers/</code>.
+        <section class="egd-hero-home">
+            <p class="egd-hero-kicker">enoGuide</p>
+            <h1 class="egd-hero-home-title">Wissen aus TikTok, ausführlich erklärt</h1>
+            <p class="egd-hero-home-lead">
+                Listen, Rezepte, Themen und Tipps von Einfach nur Olli. Jeder Punkt mit Kontext,
+                damit du verstehst, warum etwas im Alltag funktioniert.
             </p>
+            <p class="egd-hero-stat">${total} Beiträge</p>
         </section>
-        <section class="egd-format-grid" aria-label="Formate">
-            ${FORMATS.map(
-                (format) => `
-                <a class="egd-format-tile egd-format-tile--${format.id}" href="#format/${format.id}">
-                    <span class="egd-format-tile-count">${counts[format.id]}</span>
-                    <h2 class="egd-format-tile-title">${escapeHtml(format.label)}</h2>
-                    <p class="egd-format-tile-desc">${escapeHtml(format.description)}</p>
-                </a>
-            `,
-            ).join('')}
+        <section class="egd-section" aria-label="Formate">
+            <h2 class="egd-section-title">Kategorien</h2>
+            <div class="egd-format-list">
+                ${FORMATS.map(
+                    (format) => `
+                    <a class="egd-format-row egd-format-row--${format.id}" href="#format/${format.id}">
+                        <span class="egd-format-row-icon" aria-hidden="true">${formatIcon(format.id)}</span>
+                        <span class="egd-format-row-text">
+                            <span class="egd-format-row-title">${escapeHtml(format.label)}</span>
+                            <span class="egd-format-row-desc">${escapeHtml(format.description)}</span>
+                        </span>
+                        <span class="egd-format-row-meta">
+                            <span class="egd-format-row-count">${counts[format.id]}</span>
+                            <span class="egd-format-row-chevron" aria-hidden="true">›</span>
+                        </span>
+                    </a>
+                `,
+                ).join('')}
+            </div>
         </section>
     `;
 }
@@ -113,13 +154,12 @@ function renderFormatView(format: GuideFormat): string {
     const meta = formatMeta(format);
     const posts = postsForFormat(format);
     return `
-        ${renderBackLink('Alle Formate', { kind: 'home' })}
-        <section class="eno-panel egd-format-head">
-            <h2>${escapeHtml(meta.label)}</h2>
-            <p>${escapeHtml(meta.description)}</p>
-            <p class="egd-count">${posts.length} Beiträge</p>
+        <section class="egd-format-hero egd-format-hero--${format}">
+            <h1 class="egd-format-hero-title">${escapeHtml(meta.label)}</h1>
+            <p class="egd-format-hero-desc">${escapeHtml(meta.description)}</p>
+            <p class="egd-format-hero-count">${posts.length} Beiträge</p>
         </section>
-        <section class="egd-card-grid">
+        <section class="egd-card-stack">
             ${posts.map((post) => renderPostCard(post)).join('')}
         </section>
     `;
@@ -130,25 +170,23 @@ function renderListItems(post: GuidePost): string {
         return '';
     }
     return `
-        <section class="eno-panel egd-items">
-            <h2 class="egd-items-title">${post.format === 'toplist' ? 'Die Liste' : 'Kurz zusammengefasst'}</h2>
-            <ol class="egd-item-list">
-                ${post.items
-                    .map(
-                        (item) => `
-                    <li class="egd-item">
-                        <div class="egd-item-head">
-                            <h3 class="egd-item-name">${escapeHtml(item.name)}</h3>
-                            ${item.used ? '<span class="egd-item-used">Nutze ich</span>' : ''}
+        <section class="egd-entries">
+            ${post.items
+                .map(
+                    (item, index) => `
+                <article class="egd-entry">
+                    <div class="egd-entry-rank" aria-hidden="true">${index + 1}</div>
+                    <div class="egd-entry-content">
+                        <div class="egd-entry-head">
+                            <h2 class="egd-entry-name">${escapeHtml(item.name)}</h2>
+                            ${item.category ? `<span class="egd-entry-cat">${escapeHtml(item.category)}</span>` : ''}
                         </div>
-                        ${item.type || item.category ? `<p class="egd-item-tags">${[item.type, item.category].filter((v): v is string => Boolean(v)).map(escapeHtml).join(' · ')}</p>` : ''}
-                        <p class="egd-item-why"><strong>Warum gut?</strong> ${escapeHtml(item.why)}</p>
-                        ${item.comment ? `<p class="egd-item-comment">${escapeHtml(item.comment)}</p>` : ''}
-                    </li>
-                `,
-                    )
-                    .join('')}
-            </ol>
+                        <p class="egd-entry-text">${escapeHtml(item.text)}</p>
+                    </div>
+                </article>
+            `,
+                )
+                .join('')}
         </section>
     `;
 }
@@ -157,7 +195,7 @@ function renderBodyParagraphs(paragraphs?: string[]): string {
     if (!paragraphs?.length) {
         return '';
     }
-    return `<div class="egd-body">${paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}</div>`;
+    return `<div class="egd-prose">${paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}</div>`;
 }
 
 function renderRecipe(post: GuidePost): string {
@@ -165,9 +203,19 @@ function renderRecipe(post: GuidePost): string {
         return '';
     }
     return `
-        <section class="eno-panel egd-recipe">
-            ${post.ingredients?.length ? `<h2>Zutaten</h2><ul>${post.ingredients.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>` : ''}
-            ${post.steps?.length ? `<h2>Zubereitung</h2><ol>${post.steps.map((s) => `<li>${escapeHtml(s)}</li>`).join('')}</ol>` : ''}
+        <section class="egd-recipe-blocks">
+            ${post.ingredients?.length ? `
+                <div class="egd-recipe-block">
+                    <h2 class="egd-recipe-heading">Zutaten</h2>
+                    <ul class="egd-recipe-list">${post.ingredients.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>
+                </div>
+            ` : ''}
+            ${post.steps?.length ? `
+                <div class="egd-recipe-block">
+                    <h2 class="egd-recipe-heading">Zubereitung</h2>
+                    <ol class="egd-recipe-steps">${post.steps.map((s) => `<li>${escapeHtml(s)}</li>`).join('')}</ol>
+                </div>
+            ` : ''}
         </section>
     `;
 }
@@ -178,27 +226,25 @@ function renderPostView(id: string): string {
         return renderHome();
     }
     const src = headerSrc(post);
-    const parentFormat: View = { kind: 'format', format: post.format };
     return `
-        ${renderBackLink(formatMeta(post.format).label, parentFormat)}
         <article class="egd-article">
-            <header class="egd-hero">
+            <header class="egd-article-hero">
                 <img
-                    class="egd-hero-img"
+                    class="egd-article-hero-img"
                     src="${escapeHtml(src)}"
                     alt=""
                     onerror="this.src='${escapeHtml(`${BASE}headers/default.svg`)}'">
-                <div class="egd-hero-overlay">
+                <div class="egd-article-hero-overlay">
                     ${renderFormatBadge(post.format)}
-                    <h1 class="egd-hero-title">${escapeHtml(post.title)}</h1>
-                    ${post.lead ? `<p class="egd-hero-lead">${escapeHtml(post.lead)}</p>` : ''}
+                    <h1 class="egd-article-title">${escapeHtml(post.title)}</h1>
                 </div>
             </header>
-            <div class="egd-article-body">
+            <div class="egd-article-panel">
+                ${post.lead ? `<p class="egd-article-lead">${escapeHtml(post.lead)}</p>` : ''}
                 ${renderBodyParagraphs(post.body)}
                 ${renderListItems(post)}
                 ${renderRecipe(post)}
-                ${post.tiktokUrl ? `<p class="egd-tiktok"><a href="${escapeHtml(post.tiktokUrl)}" rel="noopener noreferrer" target="_blank">Zum TikTok-Video →</a></p>` : ''}
+                ${post.tiktokUrl ? `<a class="egd-tiktok-link" href="${escapeHtml(post.tiktokUrl)}" rel="noopener noreferrer" target="_blank">Zum TikTok Video</a>` : ''}
             </div>
         </article>
     `;
@@ -220,44 +266,34 @@ export function mountApp(root: HTMLElement): void {
 
     function paint(): void {
         root.innerHTML = `
-            <main class="eno-tool-shell">
-                <div class="eno-tool-inner">
+            <div class="egd-app">
+                <header class="egd-app-header">
                     ${renderToolBrandHeader({ title: TOOL_TITLE })}
-                    <div id="egd-main">${renderMain(view)}</div>
-                    ${renderEnoFooter()}
-                </div>
-            </main>
+                </header>
+                <main class="egd-app-main" id="egd-main">${renderMain(view)}</main>
+                ${renderTabBar(view)}
+            </div>
         `;
         mountEnoSiteNav(root);
-        bindEvents();
     }
 
-    function bindEvents(): void {
-        root.querySelectorAll('.egd-back').forEach((button) => {
-            button.addEventListener('click', () => {
-                const target = button.getAttribute('data-view') ?? '';
-                if (!target) {
-                    navigate({ kind: 'home' });
-                } else if (target.startsWith('format/')) {
-                    navigate({ kind: 'format', format: target.slice(7) as GuideFormat });
-                } else {
-                    navigate({ kind: 'post', id: target });
-                }
-            });
-        });
-    }
-
-    window.addEventListener('hashchange', () => {
+    function update(): void {
         view = parseView();
         const main = root.querySelector('#egd-main');
+        const tabbar = root.querySelector('.egd-tabbar');
         if (main) {
             main.innerHTML = renderMain(view);
-            bindEvents();
         }
-        document.title = view.kind === 'post' && findPostById(view.id)
-            ? `${findPostById(view.id)!.title} | enoGuide`
-            : 'enoGuide | eno.rocks';
-    });
+        if (tabbar) {
+            tabbar.outerHTML = renderTabBar(view);
+        }
+        document.title =
+            view.kind === 'post' && findPostById(view.id)
+                ? `${findPostById(view.id)!.title} | enoGuide`
+                : 'enoGuide | eno.rocks';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
+    window.addEventListener('hashchange', update);
     paint();
 }

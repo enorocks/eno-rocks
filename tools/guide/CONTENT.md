@@ -1,65 +1,41 @@
 # enoGuide · Content pflegen
 
-Internes Tool unter **`/tools/guide/`** (noindex, nicht im Hub verlinkt).
+Internes Tool: **`/tools/guide/`** (noindex).
 
 ## Formate
 
 | Datei | Format |
 |-------|--------|
-| `src/content/posts/toplists.ts` | Meine Top-Listen |
+| `src/content/posts/toplists.ts` | Meine Top Listen |
 | `src/content/posts/recipes.ts` | Meine Rezepte |
 | `src/content/posts/thoughts.ts` | Meine Gedanken zu |
 | `src/content/posts/tips.ts` | Meine Tipps |
 
-Neuer Beitrag = neues Objekt im passenden Array. `id` muss eindeutig sein (URL-Hash).
-
-## Headbild
-
-Bild in **`public/headers/`** legen, z. B. `top-proteinquellen.jpg`.
-
-Im Beitrag:
-
-```ts
-headerImage: 'headers/top-proteinquellen.jpg',
-```
-
-Ohne Bild oder bei Fehler: grüner Platzhalter (`default.svg`).
-
-Empfohlen: **1200×480** oder **16:9**, JPG/WebP.
-
-## Top-Liste (Beispiel)
+## Neuer Beitrag
 
 ```ts
 {
     id: 'top-snacks',
     format: 'toplist',
     title: 'Meine Top Snacks',
-    lead: 'Kurzer Teaser wie auf TikTok.',
+    lead: 'Zwei bis drei Sätze Einleitung als Fließtext.',
     headerImage: 'headers/top-snacks.jpg',
-    tiktokUrl: 'https://www.tiktok.com/...',  // optional
     items: [
         {
             name: 'Popcorn',
-            type: 'Lebensmittel',
             category: 'Snack',
-            why: 'Viel Volumen, wenig Kalorien.',
-            used: true,
-            comment: '',  // optional
+            text: 'Mindestens zwei bis drei vollständige Sätze. Erklären, warum es sinnvoll ist. Keine Bindestriche im Fließtext.',
         },
     ],
 },
 ```
 
-## Lokal testen
+## Headbild
+
+Datei nach `public/headers/` legen, z. B. `top-snacks.jpg` (ca. 1200×600, JPG/WebP).
+
+## Lokal
 
 ```bash
-cd tools/guide
-npm install
-npm run dev
+cd tools/guide && npm run dev
 ```
-
-→ `http://localhost:5173/tools/guide/`
-
-## Später: APK
-
-Wenn enoGuide + enoExercises stehen: Shell als PWA/APK (Capacitor o. ä.) — gleiche Content-Dateien.

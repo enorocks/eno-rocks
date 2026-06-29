@@ -4,9 +4,8 @@ export type GuideListItem = {
     name: string;
     type?: string;
     category?: string;
-    why: string;
-    used?: boolean;
-    comment?: string;
+    /** Ausführlicher Fließtext, mindestens zwei bis drei Sätze. Keine Bindestriche im Text. */
+    text: string;
 };
 
 export type GuidePost = {
@@ -14,15 +13,11 @@ export type GuidePost = {
     format: GuideFormat;
     title: string;
     lead?: string;
-    /** Datei unter public/headers/, z. B. headers/top-protein.jpg */
     headerImage?: string;
     tiktokUrl?: string;
     published?: string;
     items?: GuideListItem[];
-    /** Fließtext-Absätze für Gedanken, Tipps oder Rezept-Einleitung */
     body?: string[];
-    /** Rezept: Zutaten */
     ingredients?: string[];
-    /** Rezept: Schritte */
     steps?: string[];
 };
