@@ -1,12 +1,8 @@
 /**
- * Besucherstatistik (GoatCounter) — kostenlos für persönliche Sites:
- * 1. Auf goatcounter.com registrieren, Site „eno.rocks“ anlegen
- * 2. endpoint unten eintragen (z. B. https://enorocks.goatcounter.com/count)
- * 3. enabled auf true → deployen
- * Dashboard: Seitenaufrufe nach Pfad (/ vs /tools/kalorienrechner/ …).
+ * Besucherstatistik (GoatCounter) — Dashboard: enorocks.goatcounter.com
  */
 window.ENO_ANALYTICS = {
-    enabled: false,
-    endpoint: '',
+    enabled: true,
+    endpoint: 'https://enorocks.goatcounter.com/count',
     scriptSrc: 'https://gc.zgo.at/count.js',
 };
