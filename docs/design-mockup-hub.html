@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eno.rocks Hub · Design Mockups</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4ede2;
+      --paper-2: #ebe3d6;
+      --ink: #1a1816;
+      --muted: #6d655c;
+      --line: #d9cfc0;
+      --green: #1a6b56;
+      --green-dark: #0f4538;
+      --green-soft: #dceee6;
+      --blue: #3a6fd4;
+      --purple: #7b5ea7;
+      --gold: #c9891a;
+      --coral: #d96a4a;
+      --dt: #e07a5f;
+      --radius: 20px;
+      --radius-sm: 14px;
+      --display: "Fraunces", Georgia, serif;
+      --body: "Inter", system-ui, sans-serif;
+      --shadow: 0 28px 70px rgb(26 24 22 / 14%);
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      font-family: var(--body);
+      background: #ddd6cb;
+      color: var(--ink);
+      line-height: 1.5;
+      padding: 32px 20px 64px;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .page-head {
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    .page-head h1 {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .page-head p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      align-items: start;
+    }
+
+    .variant-block {
+      display: grid;
+      gap: 14px;
+    }
+
+    .variant-meta h2 {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .variant-meta p {
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .variant-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .tag--rec { background: var(--green-soft); color: var(--green-dark); border-color: transparent; }
+
+    .device {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgb(255 255 255 / 50%);
+      background: var(--paper);
+      min-height: 620px;
+    }
+
+    .device--desktop {
+      border-radius: 16px;
+      min-height: 520px;
+    }
+
+    /* Shared bits */
+    .wm {
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .wm-dot { color: var(--green); }
+
+    .avatar {
+      border-radius: 50%;
+      object-fit: cover;
+      background: linear-gradient(145deg, var(--green), var(--green-dark));
+      border: 3px solid #fff;
+      box-shadow: 0 6px 20px rgb(26 107 86 / 22%);
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* ═══ A: Editorial ═══ */
+    .a-top {
+      padding: 24px 20px 16px;
+      background:
+        radial-gradient(ellipse 90% 70% at 100% 0%, rgb(26 107 86 / 10%), transparent),
+        var(--paper);
+    }
+
+    .a-top .wm { font-size: 1.5rem; }
+
+    .a-lead {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      max-width: 26ch;
+    }
+
+    .a-featured {
+      margin: 16px 14px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .a-featured-img {
+      height: 140px;
+      background:
+        linear-gradient(to top, rgb(26 24 22 / 55%), transparent 45%),
+        linear-gradient(135deg, #c9891a, #1a6b56);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+    }
+
+    .a-featured-img .pill { background: rgb(255 255 255 / 22%); color: #fff; align-self: flex-start; margin-bottom: 6px; }
+
+    .a-featured-title {
+      font-family: var(--display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .a-featured-body {
+      padding: 14px 16px 16px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .a-row-scroll {
+      display: flex;
+      gap: 10px;
+      padding: 14px 14px 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .a-row-scroll::-webkit-scrollbar { display: none; }
+
+    .a-mini {
+      flex: 0 0 132px;
+      scroll-snap-align: start;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .a-mini-thumb {
+      height: 72px;
+    }
+
+    .a-mini-thumb--cal { background: linear-gradient(160deg, #dce8f8, #a8c4f0); }
+    .a-mini-thumb--mac { background: linear-gradient(160deg, #e8dff5, #b8a0d8); }
+    .a-mini-thumb--ped { background: linear-gradient(160deg, #f5e8c8, #e0c070); }
+
+    .a-mini-text {
+      padding: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .a-section-label {
+      padding: 0 18px 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ═══ B: Creator Hero ═══ */
+    .b-hero {
+      position: relative;
+      padding: 28px 20px 24px;
+      min-height: 280px;
+      color: #fff;
+      background:
+        linear-gradient(to bottom, transparent 30%, rgb(15 20 18 / 88%) 100%),
+        linear-gradient(135deg, #2d5a4a 0%, #1a1816 60%),
+        var(--green-dark);
+    }
+
+    .b-hero-photo {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 75% 20%, rgb(255 255 255 / 12%), transparent),
+        url("../assets/eno-avatar.png") center 20% / cover no-repeat;
+      opacity: 0.35;
+    }
+
+    .b-hero-content { position: relative; z-index: 1; }
+
+    .b-hero .wm { font-size: 1.35rem; color: #fff; }
+    .b-hero .wm-dot { color: #8fd4bc; }
+
+    .b-hero-name {
+      margin-top: 100px;
+      font-family: var(--display);
+      font-size: 1.65rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .b-hero-bio {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      opacity: 0.88;
+      max-width: 30ch;
+      line-height: 1.55;
+    }
+
+    .b-tt {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .b-list { padding: 16px 14px 24px; }
+
+    .b-item {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 12px;
+      border-radius: var(--radius-sm);
+      background: #fff;
+      border: 1px solid var(--line);
+      margin-bottom: 8px;
+    }
+
+    .b-item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+    }
+
+    .b-item-title { font-weight: 700; font-size: 0.92rem; }
+    .b-item-sub { font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
+    .b-item-arrow { color: var(--muted); font-size: 1.2rem; }
+
+    /* ═══ C: App Start ═══ */
+    .c-shell {
+      background: #faf7f2;
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .c-status {
+      padding: 12px 20px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .c-main { padding: 20px 18px; flex: 1; }
+
+    .c-greet {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .c-greet strong { color: var(--ink); display: block; font-family: var(--display); font-size: 1.45rem; font-weight: 700; margin-top: 2px; }
+
+    .c-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .c-action {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      border: none;
+      text-align: left;
+      font-family: inherit;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .c-action--primary {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 10px 28px rgb(26 107 86 / 28%);
+    }
+
+    .c-action--primary .c-action-sub { color: rgb(255 255 255 / 78%); }
+
+    .c-action--soft { background: #fff; border: 1px solid var(--line); }
+
+    .c-action-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      background: rgb(255 255 255 / 18%);
+    }
+
+    .c-action--soft .c-action-icon { background: var(--green-soft); }
+
+    .c-action-title { font-weight: 700; font-size: 0.95rem; }
+    .c-action-sub { font-size: 0.78rem; margin-top: 2px; color: var(--muted); }
+
+    .c-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .c-tile {
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      background: #fff;
+      border: 1px solid var(--line);
+      min-height: 88px;
+    }
+
+    .c-tile-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+    .c-tile-name { font-weight: 700; font-size: 0.88rem; margin-top: 6px; line-height: 1.25; }
+
+    .c-tabbar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      background: rgb(255 250 245 / 94%);
+      padding: 8px 0 12px;
+    }
+
+    .c-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .c-tab.is-on { color: var(--green); }
+
+    /* ═══ D: Desktop Magazine ═══ */
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="page-head">
+      <h1>eno.rocks Hub · 4 Richtungen</h1>
+      <p>
+        Vergleichsmockups für den Startseiten Hub. Alle Varianten zeigen dieselben Inhalte,
+        nur anders priorisiert und gestaltet. Öffne die Datei im Browser und scroll durch.
+      </p>
+    </header>
+
+    <div class="variant-grid">
+      <!-- A Editorial -->
+      <section class="variant-block">
+        <div class="variant-meta">
+          <h2>A · Editorial</h2>
+          <p>Content zuerst: neuer Guide Beitrag groß, Rechner als horizontale Leiste. Gut für TikTok Verlinkung und SEO.</p>
+          <div class="variant-tags">
+            <span class="tag tag--rec">Empfohlen</span>
+            <span class="tag">TikTok</span>
+            <span class="tag">Creator</span>
+          </div>
+        </div>
+        <div class="device" aria-label="Mockup Editorial">
+          <div class="a-top">
+            <div class="wm">eno<span class="wm-dot">.</span>rocks</div>
+            <p class="a-lead">Aus TikTok, zum Nachlesen.</p>
+          </div>
+          <div class="a-featured">
+            <div class="a-featured-img">
+              <span class="pill">Neu im Guide</span>
+              <div class="a-featured-title">Meine Top Proteinquellen</div>
+            </div>
+            <p class="a-featured-body">12 Lebensmittel mit Erklärung, warum sie beim Abnehmen helfen. Länger als ein TikTok, ehrlicher als eine Werbeliste.</p>
+          </div>
+          <p class="a-section-label">Rechner & Wissen</p>
+          <div class="a-row-scroll">
+            <div class="a-mini">
+              <div class="a-mini-thumb a-mini-thumb--cal"></div>
+              <div class="a-mini-text">enoCalories</div>
+            </div>
+            <div class="a-mini">
+              <div class="a-mini-thumb a-mini-thumb--mac"></div>
+              <div class="a-mini-text">enoMacros</div>
+            </div>
+            <div class="a-mini">
+              <div class="a-mini-thumb a-mini-thumb--ped"></div>
+              <div class="a-mini-text">enoPedia</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- B Creator Hero -->
+      <section class="variant-block">
+        <div class="variant-meta">
+          <h2>B · Creator Hero</h2>
+          <p>Dein Gesicht und TikTok im Fokus. Tools werden zur Liste darunter. Stark persönlich, weniger „Produkt“.</p>
+          <div class="variant-tags">
+            <span class="tag">Persönlich</span>
+            <span class="tag">Marke Olli</span>
+          </div>
+        </div>
+        <div class="device" aria-label="Mockup Creator Hero">
+          <div class="b-hero">
+            <div class="b-hero-photo" aria-hidden="true"></div>
+            <div class="b-hero-content">
+              <div class="wm">eno<span class="wm-dot">.</span>rocks</div>
+              <h2 class="b-hero-name">Einfach nur Olli</h2>
+              <p class="b-hero-bio">Was mir beim Abnehmen geholfen hat. Rechner, Listen und Begriffe ohne Abo.</p>
+              <span class="b-tt">▶ TikTok ansehen</span>
+            </div>
+          </div>
+          <div class="b-list">
+            <div class="b-item">
+              <div class="b-item-icon" style="background:#f5e8c8">★</div>
+              <div>
+                <div class="b-item-title">enoGuide</div>
+                <div class="b-item-sub">Top Listen & Tipps</div>
+              </div>
+              <span class="b-item-arrow">›</span>
+            </div>
+            <div class="b-item">
+              <div class="b-item-icon" style="background:#dce8f8">🔥</div>
+              <div>
+                <div class="b-item-title">enoCalories</div>
+                <div class="b-item-sub">Kalorien realistisch</div>
+              </div>
+              <span class="b-item-arrow">›</span>
+            </div>
+            <div class="b-item">
+              <div class="b-item-icon" style="background:#e8dff5">◐</div>
+              <div>
+                <div class="b-item-title">enoMacros</div>
+                <div class="b-item-sub">Makros aufteilen</div>
+              </div>
+              <span class="b-item-arrow">›</span>
+            </div>
+            <div class="b-item">
+              <div class="b-item-icon" style="background:#dceee6">📖</div>
+              <div>
+                <div class="b-item-title">enoPedia</div>
+                <div class="b-item-sub">Begriffe einfach</div>
+              </div>
+              <span class="b-item-arrow">›</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- C App Start -->
+      <section class="variant-block">
+        <div class="variant-meta">
+          <h2>C · App Start</h2>
+          <p>Wie eine native App: klare Hauptaktionen, Tab Leiste unten. Brücke zur späteren enoGuide APK.</p>
+          <div class="variant-tags">
+            <span class="tag tag--rec">APK ready</span>
+            <span class="tag">Mobile</span>
+          </div>
+        </div>
+        <div class="device c-shell" aria-label="Mockup App Start">
+          <div class="c-status"><span>eno.rocks</span><span>☰</span></div>
+          <div class="c-main">
+            <p class="c-greet">Willkommen zurück<br><strong>Hey Olli</strong></p>
+            <div class="c-actions">
+              <button type="button" class="c-action c-action--primary">
+                <span class="c-action-icon">★</span>
+                <span>
+                  <div class="c-action-title">Guide öffnen</div>
+                  <div class="c-action-sub">Listen, Rezepte, Tipps</div>
+                </span>
+              </button>
+              <button type="button" class="c-action c-action--soft">
+                <span class="c-action-icon">🔥</span>
+                <span>
+                  <div class="c-action-title">Kalorien berechnen</div>
+                  <div class="c-action-sub">enoCalories</div>
+                </span>
+              </button>
+            </div>
+            <div class="c-grid">
+              <div class="c-tile">
+                <div class="c-tile-label">Wissen</div>
+                <div class="c-tile-name">enoPedia</div>
+              </div>
+              <div class="c-tile">
+                <div class="c-tile-label">Makros</div>
+                <div class="c-tile-name">enoMacros</div>
+              </div>
+              <div class="c-tile">
+                <div class="c-tile-label">App</div>
+                <div class="c-tile-name">DailyTogether</div>
+              </div>
+              <div class="c-tile">
+                <div class="c-tile-label">Bald</div>
+                <div class="c-tile-name">enoExercises</div>
+              </div>
+            </div>
+          </div>
+          <nav class="c-tabbar" aria-label="Tabs">
+            <span class="c-tab is-on"><span>⌂</span>Start</span>
+            <span class="c-tab"><span>★</span>Guide</span>
+            <span class="c-tab"><span>🔥</span>Tools</span>
+            <span class="c-tab"><span>◎</span>Profil</span>
+          </nav>
+        </div>
+      </section>
+    </div>
+
+    <!-- D Desktop full width -->
+    <section class="variant-block" style="margin-top:48px">
+      <div class="variant-meta">
+        <h2>D · Desktop Magazin</h2>
+        <p>Für größere Screens: zweispaltig, Guide links groß, Tools rechts kompakt. Weniger Scroll, mehr Überblick.</p>
+        <div class="variant-tags">
+          <span class="tag">Desktop</span>
+          <span class="tag">Hybrid A+B</span>
+        </div>
+      </div>
+      <div class="device device--desktop" style="background:var(--paper);padding:0">
+        <style>
+          .d-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            min-height: 500px;
+          }
+          .d-left {
+            padding: 32px 28px;
+            border-right: 1px solid var(--line);
+          }
+          .d-left .wm { font-size: 2rem; }
+          .d-quote {
+            margin-top: 20px;
+            font-family: var(--display);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            line-height: 1.2;
+            max-width: 18ch;
+          }
+          .d-creator {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-top: 28px;
+          }
+          .d-creator .avatar { width: 64px; height: 64px; }
+          .d-creator-name { font-weight: 800; font-size: 1rem; }
+          .d-creator-sub { font-size: 0.85rem; color: var(--muted); margin-top: 4px; max-width: 36ch; }
+          .d-feature {
+            margin-top: 32px;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: #fff;
+            border: 1px solid var(--line);
+          }
+          .d-feature-tag { font-size: 0.68rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
+          .d-feature-title { font-family: var(--display); font-size: 1.35rem; font-weight: 700; margin-top: 8px; }
+          .d-feature-text { font-size: 0.9rem; color: var(--muted); margin-top: 8px; line-height: 1.6; max-width: 42ch; }
+          .d-right { padding: 28px 24px; background: color-mix(in srgb, var(--paper-2) 50%, var(--paper)); }
+          .d-right h3 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+          .d-tool {
+            display: grid;
+            grid-template-columns: 48px 1fr auto;
+            gap: 12px;
+            align-items: center;
+            padding: 12px 14px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            margin-bottom: 8px;
+          }
+          .d-tool-dot { width: 48px; height: 48px; border-radius: 12px; }
+          .d-tool-name { font-weight: 700; font-size: 0.9rem; }
+          .d-tool-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+          @media (max-width: 720px) {
+            .d-wrap { grid-template-columns: 1fr; }
+            .d-left { border-right: 0; border-bottom: 1px solid var(--line); }
+          }
+        </style>
+        <div class="d-wrap">
+          <div class="d-left">
+            <div class="wm">eno<span class="wm-dot">.</span>rocks</div>
+            <p class="d-quote">Ehrlich abnehmen. Ohne Bullshit Produkte.</p>
+            <div class="d-creator">
+              <div class="avatar" style="background-image:url('../assets/eno-avatar.png');background-size:cover"></div>
+              <div>
+                <div class="d-creator-name">Einfach nur Olli</div>
+                <p class="d-creator-sub">TikTok Creator. Hier findest du alles aus meinen Videos zum Nachlesen und Nachrechnen.</p>
+              </div>
+            </div>
+            <div class="d-feature">
+              <span class="d-feature-tag">Aktuell im Guide</span>
+              <div class="d-feature-title">Meine Top Proteinquellen</div>
+              <p class="d-feature-text">Zwölf Lebensmittel mit ausführlicher Begründung. Der Tiefgang zu meinem TikTok Video.</p>
+            </div>
+          </div>
+          <div class="d-right">
+            <h3>Tools</h3>
+            <div class="d-tool">
+              <div class="d-tool-dot" style="background:linear-gradient(135deg,#dce8f8,#3a6fd4)"></div>
+              <div>
+                <div class="d-tool-name">enoCalories</div>
+                <div class="d-tool-desc">Mehrere Formeln, realistische Spanne</div>
+              </div>
+              <span style="color:var(--muted)">›</span>
+            </div>
+            <div class="d-tool">
+              <div class="d-tool-dot" style="background:linear-gradient(135deg,#e8dff5,#7b5ea7)"></div>
+              <div>
+                <div class="d-tool-name">enoMacros</div>
+                <div class="d-tool-desc">Protein, Fett, Carbs aufteilen</div>
+              </div>
+              <span style="color:var(--muted)">›</span>
+            </div>
+            <div class="d-tool">
+              <div class="d-tool-dot" style="background:linear-gradient(135deg,#f5e8c8,#c9891a)"></div>
+              <div>
+                <div class="d-tool-name">enoPedia</div>
+                <div class="d-tool-desc">Begriffe einfach erklärt</div>
+              </div>
+              <span style="color:var(--muted)">›</span>
+            </div>
+            <div class="d-tool">
+              <div class="d-tool-dot" style="background:linear-gradient(135deg,#f8ddd4,#e07a5f)"></div>
+              <div>
+                <div class="d-tool-name">DailyTogether</div>
+                <div class="d-tool-desc">Gemeinsam planen</div>
+              </div>
+              <span style="color:var(--muted)">›</span>
+            </div>
+            <h3 style="margin-top:20px">Support</h3>
+            <div class="d-tool">
+              <div class="d-tool-dot" style="background:#1a1816"></div>
+              <div>
+                <div class="d-tool-name">Patreon</div>
+                <div class="d-tool-desc">Projekte bleiben kostenlos</div>
+              </div>
+              <span style="color:var(--muted)">›</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:48px;max-width:720px;padding:24px;background:#fff;border-radius:var(--radius);border:1px solid var(--line)">
+      <h2 style="font-family:var(--display);font-size:1.2rem;font-weight:700">Kombination die ich empfehlen würde</h2>
+      <p style="margin-top:10px;font-size:0.92rem;color:var(--muted);line-height:1.65">
+        <strong style="color:var(--ink)">Mobile:</strong> Variante A oder B als Hub Start.
+        <strong style="color:var(--ink)">Desktop:</strong> Variante D.
+        <strong style="color:var(--ink)">Später APK:</strong> Variante C als enoGuide Shell.
+        Display Font Fraunces für alle Titel, Inter für Fließtext, echtes Avatar Foto überall.
+      </p>
+    </section>
+  </div>
+</body>
+</html>
