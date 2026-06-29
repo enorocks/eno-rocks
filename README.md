@@ -1,4 +1,4 @@
-# eno.rocks
+﻿# eno.rocks
 
 Hub und Tools unter einer Marke. Design B: heller Content, Header-Banner, gemeinsame Footer/Tokens.
 
@@ -12,11 +12,11 @@ Siehe [docs/STRUCTURE.md](docs/STRUCTURE.md) und [shared/README.md](shared/READM
 
 | URL | Quellcode | Build |
 |-----|-----------|-------|
-| `/tools/dailytogether/` | `tools/dailytogether/` | `npm run build` |
+| `/tools/abnehmguide/` | `tools/abnehmguide/` | `npm run build` |
 | `/tools/kalorienrechner/` | `tools/kalorienrechner/` | `npm run build` |
 | `/tools/makrorechner/` | `tools/makrorechner/` | `npm run build` |
-| `/tools/uebungen/` | `tools/uebungen/` | `npm run build` |
-| `/tools/pedia/` | `tools/pedia/` | `npm run build` |
+| `/tools/abnehmlexikon/` | `tools/abnehmlexikon/` | `npm run build` |
+| `/tools/lieblingsuebungen/` | `tools/lieblingsuebungen/` | `npm run build` |
 
 Alle Tools: `npm run build:tools` (im Projektroot).
 

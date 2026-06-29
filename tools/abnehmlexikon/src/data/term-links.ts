@@ -1,4 +1,4 @@
-import type { GlossaryTerm } from './terms';
+﻿import type { GlossaryTerm } from './terms';
 
 export type ToolLink = {
     href: string;
@@ -7,7 +7,7 @@ export type ToolLink = {
 
 const CALORIES = { href: '/tools/kalorienrechner/', label: 'enoCalories' };
 const MACROS = { href: '/tools/makrorechner/', label: 'enoMacros' };
-const EXERCISES = { href: '/tools/uebungen/', label: 'enoExercises' };
+const EXERCISES = { href: '/tools/lieblingsuebungen/', label: 'enoExercises' };
 
 /** Begriffe mit direktem Link zu eno.rocks-Tools. */
 export const TOOL_LINKS: Record<string, ToolLink> = {

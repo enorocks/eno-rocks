@@ -15,7 +15,7 @@
 
     /* Tool-Farben (Hub, Menü, später Favicons) */
     --eno-tool-hub: var(--eno-accent);
-    --eno-tool-dailytogether: #e07a5f;
+    --eno-tool-guide: #1a7a62;
     --eno-tool-kalorienrechner: #3a6fd4;
     --eno-tool-makrorechner: #7b5ea7;
     --eno-tool-uebungen: #d4534a;
@@ -23,7 +23,6 @@
     --eno-tool-patreon: #000000;
 
     /* Legacy-Aliase */
-    --dt-primary: var(--eno-tool-dailytogether);
     --eno-tool-enzyklopaedie: var(--eno-tool-pedia);
 }
 

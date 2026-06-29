@@ -1,6 +1,6 @@
-# enoGuide · Content pflegen
+﻿# enoGuide · Content pflegen
 
-Internes Tool: **`/tools/guide/`** (noindex).
+Internes Tool: **`/tools/abnehmguide/`** (noindex).
 
 ## Formate
 
@@ -37,5 +37,5 @@ Datei nach `public/headers/` legen, z. B. `top-snacks.jpg` (ca. 1200×600, JPG/W
 ## Lokal
 
 ```bash
-cd tools/guide && npm run dev
+cd tools/abnehmguide && npm run dev
 ```

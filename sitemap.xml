@@ -16,502 +16,497 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/dailytogether/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://eno.rocks/tools/uebungen/</loc>
+    <loc>https://eno.rocks/tools/lieblingsuebungen/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kalorie</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kalorie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#energiebedarf</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#energiebedarf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#grundumsatz</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#grundumsatz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#leistungsumsatz</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#leistungsumsatz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#gesamtumsatz</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#gesamtumsatz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#energiebilanz</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#energiebilanz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kaloriendefizit</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kaloriendefizit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kalorienuberschuss</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kalorienuberschuss</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#erhaltungskalorien</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#erhaltungskalorien</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#makronahrstoffe</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#makronahrstoffe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#nahrstoffdichte</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#nahrstoffdichte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kaloriendichte</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kaloriendichte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#nahrwertangaben</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#nahrwertangaben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#protein</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#protein</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kohlenhydrate</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kohlenhydrate</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#fett</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#fett</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#ballaststoffe</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#ballaststoffe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#zucker</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#zucker</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#glykogen</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#glykogen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#alkoholkalorien</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#alkoholkalorien</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#proteinbedarf</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#proteinbedarf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#makroverteilung</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#makroverteilung</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#magnesium</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#magnesium</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#vitamin-b12</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#vitamin-b12</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#vitamin-d</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#vitamin-d</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#elektrolyte</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#elektrolyte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#whey-protein</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#whey-protein</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kreatin</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kreatin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#koffein</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#koffein</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#fatburner</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#fatburner</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#proteinriegel</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#proteinriegel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#krafttraining</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#krafttraining</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#hypertrophie</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#hypertrophie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#progressive-overload</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#progressive-overload</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#volumen</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#volumen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#wiederholungen</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#wiederholungen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#satz</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#satz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#rir</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#rir</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#rpe</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#rpe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#muskelversagen</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#muskelversagen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#regeneration</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#regeneration</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#deload</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#deload</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#ganzkorperplan</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#ganzkorperplan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#split</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#split</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#push-pull-legs</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#push-pull-legs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#oberkorper-unterkorper</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#oberkorper-unterkorper</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#compound-ubung</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#compound-ubung</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#isolation-ubung</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#isolation-ubung</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#cardio</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#cardio</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#hiit</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#hiit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#neat</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#neat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#schritte</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#schritte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#trainingsfrequenz</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#trainingsfrequenz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#technik</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#technik</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#tracken</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#tracken</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kalorienzahlen</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kalorienzahlen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#food-tracking-app</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#food-tracking-app</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#lebensmittel-wiegen</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#lebensmittel-wiegen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#rohgewicht</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#rohgewicht</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#gargewicht</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#gargewicht</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#rezept-tracken</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#rezept-tracken</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#wochendurchschnitt</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#wochendurchschnitt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#gewichtstrend</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#gewichtstrend</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#korpermasse</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#korpermasse</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#tagesbudget</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#tagesbudget</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#kalorienbanking</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#kalorienbanking</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#cheat-day</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#cheat-day</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#refeed</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#refeed</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#diet-break</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#diet-break</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#80-20-regel</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#80-20-regel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#meal-prep</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#meal-prep</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#abnehmen</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#abnehmen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#fettverlust</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#fettverlust</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#plateau</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#plateau</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#wassereinlagerung</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#wassereinlagerung</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#jojo-effekt</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#jojo-effekt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#crash-diat</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#crash-diat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#reverse-diet</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#reverse-diet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#lean-bulk</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#lean-bulk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#mini-cut</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#mini-cut</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#metabolic-adaptation</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#metabolic-adaptation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#defizitgrosse</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#defizitgrosse</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#zielgewicht</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#zielgewicht</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#bauchfett</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#bauchfett</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#skinny-fat</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#skinny-fat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#korperrekomposition</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#korperrekomposition</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#diatmudigkeit</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#diatmudigkeit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#heisshunger</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#heisshunger</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#bmi</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#bmi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#korperfettanteil</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#korperfettanteil</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#muskelmasse</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#muskelmasse</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#wassergewicht</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#wassergewicht</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#zyklus</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#zyklus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#restaurant</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#restaurant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#protein-pro-mahlzeit</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#protein-pro-mahlzeit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#alkohol-im-defizit</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#alkohol-im-defizit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eno.rocks/tools/pedia/#schrittziel</loc>
+    <loc>https://eno.rocks/tools/abnehmlexikon/#schrittziel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -1,4 +1,4 @@
-/* ENO.rocks · Hub (Design B) */
+/* ENO.rocks · Hub (Design B · Creator Hero) */
 
 @import url("shared/css/eno-tokens.css");
 @import url("shared/css/eno-fonts.css");
@@ -27,149 +27,123 @@
     text-decoration: none;
 }
 
-/* Content Creator Panel */
+/* Top bar */
 
-.eno-hub-creator {
-    position: relative;
-    margin-bottom: 0;
-    border-radius: calc(var(--eno-radius-md) + 4px);
-    border: 2px solid color-mix(in srgb, var(--eno-accent) 28%, var(--eno-line));
-    background:
-        linear-gradient(
-            145deg,
-            color-mix(in srgb, var(--eno-accent) 6%, var(--eno-surface)) 0%,
-            var(--eno-surface) 42%,
-            color-mix(in srgb, var(--eno-tool-dailytogether) 8%, var(--eno-surface)) 100%
-        );
-    box-shadow:
-        0 1px 0 color-mix(in srgb, #fff 80%, transparent) inset,
-        0 12px 40px color-mix(in srgb, var(--eno-dark) 8%, transparent);
-    overflow: hidden;
+.eno-hub-top {
+    background: transparent;
 }
 
-.eno-hub-creator-accent {
-    position: absolute;
-    top: -40%;
-    right: -8%;
-    width: min(280px, 55vw);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        color-mix(in srgb, var(--eno-accent) 18%, transparent) 0%,
-        transparent 68%
-    );
-    pointer-events: none;
-}
-
-.eno-hub-creator-inner {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(140px, 200px);
-    align-items: stretch;
-    gap: 0;
-    padding: 20px 22px;
-}
-
-.eno-hub-creator-profile {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-rows: auto 1fr;
-    gap: 10px 18px;
-    align-items: start;
-    min-width: 0;
-    padding-right: 20px;
-}
-
-.eno-hub-creator-avatar {
-    grid-row: 1 / -1;
-    align-self: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 3px solid #fff;
-    box-shadow:
-        0 0 0 2px color-mix(in srgb, var(--eno-accent) 35%, var(--eno-line)),
-        0 6px 20px color-mix(in srgb, var(--eno-dark) 12%, transparent);
-}
-
-.eno-hub-creator-name {
+.eno-hub-top .eno-hub-wordmark {
     margin: 0;
-    padding-top: 4px;
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-size: 1.15rem;
     font-weight: 800;
     letter-spacing: -0.04em;
-    line-height: 1.1;
+}
+
+.eno-hub-top .eno-hub-wordmark a {
     color: var(--eno-text);
 }
 
-.eno-hub-creator-bio {
+.eno-hub-wordmark-dot {
+    color: var(--eno-accent);
+}
+
+/* Hero */
+
+.eno-hub-hero {
+    position: relative;
+    margin: 0 0 8px;
+    padding: 28px 22px 24px;
+    min-height: 280px;
+    border-radius: calc(var(--eno-radius-md) + 4px);
+    overflow: hidden;
+    color: #fff;
+    background:
+        linear-gradient(to bottom, transparent 20%, rgb(15 20 18 / 90%) 100%),
+        linear-gradient(135deg, #2d5a4a 0%, #1a1816 60%);
+}
+
+.eno-hub-hero-photo {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 80% at 75% 20%, rgb(255 255 255 / 12%), transparent),
+        url("assets/eno-avatar.png") center 20% / cover no-repeat;
+    opacity: 0.38;
+}
+
+.eno-hub-hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 220px;
+    justify-content: flex-end;
+}
+
+.eno-hub-hero-name {
     margin: 0;
+    font-size: clamp(1.65rem, 5vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.eno-hub-hero-bio {
+    margin: 10px 0 0;
+    max-width: 36ch;
     font-size: 0.92rem;
     font-weight: 500;
     line-height: 1.55;
-    color: var(--eno-muted);
-    max-width: none;
+    opacity: 0.9;
 }
 
-.eno-hub-creator-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    padding-left: 20px;
-    border-left: 1px solid color-mix(in srgb, var(--eno-accent) 18%, var(--eno-line));
-}
-
-.eno-hub-creator-btn {
+.eno-hub-hero-tt {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 9px;
-    width: 100%;
-    min-height: 52px;
-    padding: 14px 18px;
-    border: none;
-    border-radius: 14px;
-    font-size: 0.94rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--eno-dark);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.eno-hub a.eno-hub-creator-btn {
-    color: #fff;
+.eno-hub a.eno-hub-hero-tt {
+    color: var(--eno-dark);
 }
 
-.eno-hub-creator-btn svg {
-    width: 22px;
-    height: 22px;
+.eno-hub-hero-tt svg {
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
 }
 
-.eno-hub-creator-btn--tt {
-    background: var(--eno-dark);
-    box-shadow: 0 2px 8px color-mix(in srgb, var(--eno-dark) 18%, transparent);
-}
-
-.eno-hub-creator-btn--tt:hover,
-.eno-hub-creator-btn--tt:focus-visible {
-    background: #2a2826;
+.eno-hub-hero-tt:hover,
+.eno-hub-hero-tt:focus-visible {
     outline: none;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--eno-dark) 24%, transparent);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 18%);
 }
 
-/* Hub sections */
+/* Sections */
 
 .eno-hub-section {
-    margin-top: 24px;
+    margin-top: 22px;
+}
+
+.eno-hub-section--support {
+    margin-top: 18px;
+    padding-top: 4px;
 }
 
 .eno-hub-section-title {
-    margin: 0 0 12px;
+    margin: 0 0 10px;
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -189,227 +163,207 @@
     width: min(100%, var(--eno-max));
     margin: 0 auto;
     padding:
-        16px
+        8px
         max(20px, env(safe-area-inset-right))
         24px
         max(20px, env(safe-area-inset-left));
     flex: 1;
 }
 
-/* Two-column grid */
+/* Tool list */
 
-.eno-hub-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.eno-hub-card--wide {
-    width: 100%;
-}
-
-.eno-hub-grid-row {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-}
-
-.eno-hub-card {
-    position: relative;
+.eno-hub-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-height: 100%;
-    padding: 16px 16px 52px;
-    border: 1.5px solid color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 32%, var(--eno-line));
+}
+
+.eno-hub-list-item {
+    --eno-item-accent: var(--eno-accent);
     border-radius: var(--eno-radius-md);
     background: var(--eno-surface);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    border: 1px solid color-mix(in srgb, var(--eno-item-accent) 22%, var(--eno-line));
 }
 
-.eno-hub-card-top {
-    display: flex;
+.eno-hub-list-item--abnehmguide {
+    --eno-item-accent: var(--eno-tool-guide);
+}
+
+.eno-hub-list-item--kalorienrechner {
+    --eno-item-accent: var(--eno-tool-kalorienrechner);
+}
+
+.eno-hub-list-item--makrorechner {
+    --eno-item-accent: var(--eno-tool-makrorechner);
+}
+
+.eno-hub-list-item--abnehmlexikon {
+    --eno-item-accent: var(--eno-tool-pedia);
+}
+
+.eno-hub-list-item--lieblingsuebungen {
+    --eno-item-accent: var(--eno-tool-uebungen);
+}
+
+.eno-hub-list-item--patreon {
+    --eno-item-accent: var(--eno-tool-patreon);
+}
+
+.eno-hub-list-link {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    gap: 12px;
     align-items: center;
-    gap: 10px;
-    min-width: 0;
+    padding: 14px 14px 14px 12px;
+    border-radius: inherit;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.eno-hub-card-icon {
+.eno-hub-list-item--soon {
     display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--eno-item-accent, var(--eno-accent));
-    color: #fff;
-}
-
-.eno-hub-card-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-.eno-hub-card-go .eno-icon {
-    width: 14px;
-    height: 14px;
-}
-
-.eno-hub-card:hover,
-.eno-hub-card:focus-visible {
-    border-color: color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 55%, var(--eno-line));
-    box-shadow: 0 6px 20px color-mix(in srgb, var(--eno-dark) 7%, transparent);
-    outline: none;
-    transform: translateY(-1px);
-}
-
-.eno-hub-card-title {
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    color: var(--eno-item-accent, var(--eno-text));
-}
-
-.eno-hub-card-desc {
-    font-size: 0.86rem;
-    font-weight: 500;
-    color: var(--eno-muted);
-    line-height: 1.45;
-}
-
-.eno-hub-card-go {
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    border: 2px solid color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 45%, var(--eno-line));
-    border-radius: 50%;
-    color: var(--eno-item-accent, var(--eno-accent));
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-
-.eno-hub-card-go svg {
-    width: 14px;
-    height: 14px;
-}
-
-.eno-hub-card:hover .eno-hub-card-go,
-.eno-hub-card:focus-visible .eno-hub-card-go {
-    transform: translateX(2px);
-    border-color: var(--eno-item-accent, var(--eno-accent));
-    background: color-mix(in srgb, var(--eno-item-accent, var(--eno-accent)) 8%, #fff);
-}
-
-.eno-hub-card--soon {
-    cursor: default;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    padding: 14px 14px 14px 12px;
     background: color-mix(in srgb, var(--eno-muted) 4%, var(--eno-surface));
     border-style: dashed;
     border-color: color-mix(in srgb, var(--eno-muted) 28%, var(--eno-line));
-    padding-bottom: 16px;
 }
 
-.eno-hub-card--soon .eno-hub-card-icon {
-    background: color-mix(in srgb, var(--eno-muted) 45%, var(--eno-line));
+.eno-hub-list-link:hover,
+.eno-hub-list-link:focus-visible {
+    outline: none;
+    background: color-mix(in srgb, var(--eno-item-accent) 5%, var(--eno-surface));
+    transform: translateY(-1px);
 }
 
-.eno-hub-card--soon .eno-hub-card-title {
+.eno-hub-list-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--eno-item-accent) 14%, #fff);
+    color: var(--eno-item-accent);
+    flex-shrink: 0;
+}
+
+.eno-hub-list-item--soon .eno-hub-list-icon {
+    background: color-mix(in srgb, var(--eno-muted) 12%, var(--eno-line));
     color: var(--eno-muted);
 }
 
-.eno-hub-card--soon .eno-hub-card-desc {
+.eno-hub-list-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.eno-hub-list-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.eno-hub-list-title {
+    font-size: 0.98rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--eno-text);
+}
+
+.eno-hub-list-item--soon .eno-hub-list-title {
+    color: color-mix(in srgb, var(--eno-item-accent) 55%, var(--eno-muted));
+}
+
+.eno-hub-list-desc {
+    font-size: 0.84rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--eno-muted);
+}
+
+.eno-hub-list-item--soon .eno-hub-list-desc {
     font-style: italic;
 }
 
-.eno-hub-card--uebungen.eno-hub-card--soon {
-    border-color: color-mix(in srgb, var(--eno-tool-uebungen) 35%, var(--eno-line));
+.eno-hub-list-arrow {
+    display: grid;
+    place-items: center;
+    color: var(--eno-muted);
+    padding-right: 2px;
 }
 
-.eno-hub-card--uebungen.eno-hub-card--soon .eno-hub-card-icon {
-    background: color-mix(in srgb, var(--eno-tool-uebungen) 72%, var(--eno-muted));
+.eno-hub-list-arrow svg {
+    width: 18px;
+    height: 18px;
 }
 
-.eno-hub-card--uebungen.eno-hub-card--soon .eno-hub-card-title {
-    color: color-mix(in srgb, var(--eno-tool-uebungen) 70%, var(--eno-muted));
+.eno-hub-list-link:hover .eno-hub-list-arrow,
+.eno-hub-list-link:focus-visible .eno-hub-list-arrow {
+    color: var(--eno-item-accent);
 }
 
-.eno-hub-card-badge {
+.eno-hub-list-badge {
     display: inline-block;
     margin-left: 6px;
-    padding: 0.15em 0.55em;
+    padding: 0.12em 0.5em;
     border-radius: 999px;
     background: color-mix(in srgb, var(--eno-line) 55%, var(--eno-bg));
-    font-size: 0.68rem;
+    font-size: 0.64rem;
     font-weight: 800;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--eno-muted);
     vertical-align: middle;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .eno-hub-creator-btn,
-    .eno-hub-card,
-    .eno-hub-card-go {
+    .eno-hub-hero-tt,
+    .eno-hub-list-link {
         transition: none;
     }
 
-    .eno-hub-creator-btn:hover,
-    .eno-hub-creator-btn:focus-visible,
-    .eno-hub-card:hover,
-    .eno-hub-card:focus-visible {
-        transform: none;
-    }
-
-    .eno-hub-card:hover .eno-hub-card-go,
-    .eno-hub-card:focus-visible .eno-hub-card-go {
+    .eno-hub-hero-tt:hover,
+    .eno-hub-hero-tt:focus-visible,
+    .eno-hub-list-link:hover,
+    .eno-hub-list-link:focus-visible {
         transform: none;
     }
 }
 
 @media (max-width: 560px) {
-    .eno-hub-creator-inner {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding: 18px 16px 20px;
+    .eno-hub-hero {
+        padding: 24px 18px 20px;
+        min-height: 260px;
     }
 
-    .eno-hub-creator-profile {
-        grid-template-columns: 72px minmax(0, 1fr);
-        gap: 8px 14px;
-        padding-right: 0;
+    .eno-hub-hero-content {
+        min-height: 200px;
     }
 
-    .eno-hub-creator-avatar {
-        width: 72px;
-        height: 72px;
-        grid-row: 1 / 3;
+    .eno-hub-list-link {
+        grid-template-columns: 40px minmax(0, 1fr) auto;
+        gap: 10px;
+        padding: 12px;
     }
 
-    .eno-hub-creator-name {
-        padding-top: 2px;
+    .eno-hub-list-item--soon {
+        grid-template-columns: 40px minmax(0, 1fr);
+        padding: 12px;
     }
 
-    .eno-hub-creator-actions {
-        padding-left: 0;
-        border-left: none;
-        padding-top: 4px;
-        border-top: 1px solid color-mix(in srgb, var(--eno-accent) 18%, var(--eno-line));
+    .eno-hub-list-icon {
+        width: 40px;
+        height: 40px;
     }
 
-    .eno-hub-grid-row {
-        grid-template-columns: 1fr;
-    }
-
-    .eno-hub-card {
-        padding-bottom: 16px;
-        padding-right: 16px;
-    }
-
-    .eno-hub-card-go {
-        display: none;
+    .eno-hub-list-icon svg {
+        width: 20px;
+        height: 20px;
     }
 }

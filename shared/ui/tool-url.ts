@@ -1,11 +1,10 @@
-/** ENO-Tool-URLs (Hub + Rechner) */
+﻿/** ENO-Tool-URLs (Hub + Rechner) */
 export const ENO_TOOL_URLS = {
     hub: '/',
     calories: '/tools/kalorienrechner/',
     macros: '/tools/makrorechner/',
-    pedia: '/tools/pedia/',
-    exercises: '/tools/uebungen/',
-    dailytogether: '/tools/dailytogether/',
+    pedia: '/tools/abnehmlexikon/',
+    exercises: '/tools/lieblingsuebungen/',
 } as const;
 
 export type EnoToolId = keyof typeof ENO_TOOL_URLS;

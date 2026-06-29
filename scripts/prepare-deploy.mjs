@@ -1,4 +1,4 @@
-import { cp, rm, mkdir } from 'node:fs/promises';
+﻿import { cp, rm, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -11,7 +11,7 @@ const ROOT_DIRS = ['assets', 'fonts', 'impressum', 'datenschutz'];
 
 const SHARED_DIRS = ['shared/css', 'shared/js', 'shared/vendor'];
 
-const TOOLS = ['kalorienrechner', 'makrorechner', 'dailytogether', 'uebungen', 'pedia', 'guide'];
+const TOOLS = ['kalorienrechner', 'makrorechner', 'lieblingsuebungen', 'abnehmlexikon', 'abnehmguide'];
 
 async function copyInto(src, dest) {
     await mkdir(path.dirname(dest), { recursive: true });

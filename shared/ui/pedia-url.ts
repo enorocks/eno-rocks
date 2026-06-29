@@ -1,3 +1,3 @@
-export function pediaTermUrl(termId: string): string {
-    return `/tools/pedia/#${termId}`;
+﻿export function pediaTermUrl(termId: string): string {
+    return `/tools/abnehmlexikon/#${termId}`;
 }

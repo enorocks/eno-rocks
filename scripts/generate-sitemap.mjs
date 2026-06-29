@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+﻿import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -9,9 +9,8 @@ const STATIC_PAGES = [
     { loc: '/', changefreq: 'weekly', priority: '1.0' },
     { loc: '/tools/kalorienrechner/', changefreq: 'monthly', priority: '0.9' },
     { loc: '/tools/makrorechner/', changefreq: 'monthly', priority: '0.9' },
-    { loc: '/tools/pedia/', changefreq: 'weekly', priority: '0.9' },
-    { loc: '/tools/dailytogether/', changefreq: 'monthly', priority: '0.8' },
-    { loc: '/tools/uebungen/', changefreq: 'monthly', priority: '0.7' },
+    { loc: '/tools/abnehmlexikon/', changefreq: 'weekly', priority: '0.9' },
+    { loc: '/tools/lieblingsuebungen/', changefreq: 'monthly', priority: '0.7' },
 ];
 
 function slug(value) {
@@ -28,7 +27,7 @@ function slug(value) {
 }
 
 async function readPediaTermIds() {
-    const termsPath = path.join(root, 'tools', 'pedia', 'src', 'data', 'terms.ts');
+    const termsPath = path.join(root, 'tools', 'abnehmlexikon', 'src', 'data', 'terms.ts');
     const source = await readFile(termsPath, 'utf8');
     const titles = [...source.matchAll(/term\('([^']+)'/g)].map((match) => match[1]);
     return titles.map(slug);
@@ -46,7 +45,7 @@ async function main() {
     const termIds = await readPediaTermIds();
     const entries = [
         ...STATIC_PAGES.map((page) => urlEntry(page.loc, page.changefreq, page.priority)),
-        ...termIds.map((id) => urlEntry(`/tools/pedia/#${id}`, 'monthly', '0.6')),
+        ...termIds.map((id) => urlEntry(`/tools/abnehmlexikon/#${id}`, 'monthly', '0.6')),
     ];
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>

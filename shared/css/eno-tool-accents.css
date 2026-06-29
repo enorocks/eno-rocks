@@ -9,18 +9,18 @@
     --eno-accent-dark: #124838;
 }
 
-.eno-site-nav__item[data-eno-nav-id="dailytogether"],
-.eno-site-nav__item--dailytogether,
-.eno-hub-card--dailytogether,
-.eno-tool--dailytogether {
-    --eno-item-accent: var(--eno-tool-dailytogether);
-    --eno-accent: var(--eno-tool-dailytogether);
-    --eno-accent-dark: color-mix(in srgb, var(--eno-tool-dailytogether) 68%, #000);
-    --dt-primary: var(--eno-tool-dailytogether);
+.eno-site-nav__item[data-eno-nav-id="abnehmguide"],
+.eno-site-nav__item--abnehmguide,
+.eno-hub-list-item--abnehmguide,
+.eno-tool--abnehmguide {
+    --eno-item-accent: var(--eno-tool-guide);
+    --eno-accent: var(--eno-tool-guide);
+    --eno-accent-dark: color-mix(in srgb, var(--eno-tool-guide) 68%, #000);
 }
 
 .eno-site-nav__item[data-eno-nav-id="kalorienrechner"],
 .eno-site-nav__item--kalorienrechner,
+.eno-hub-list-item--kalorienrechner,
 .eno-hub-card--kalorienrechner,
 .eno-tool--kalorienrechner {
     --eno-item-accent: var(--eno-tool-kalorienrechner);
@@ -30,6 +30,7 @@
 
 .eno-site-nav__item[data-eno-nav-id="makrorechner"],
 .eno-site-nav__item--makrorechner,
+.eno-hub-list-item--makrorechner,
 .eno-hub-card--makrorechner,
 .eno-tool--makrorechner {
     --eno-item-accent: var(--eno-tool-makrorechner);
@@ -37,19 +38,19 @@
     --eno-accent-dark: color-mix(in srgb, var(--eno-tool-makrorechner) 68%, #000);
 }
 
-.eno-site-nav__item[data-eno-nav-id="uebungen"],
-.eno-site-nav__item--uebungen,
-.eno-hub-card--uebungen,
-.eno-tool--uebungen {
+.eno-site-nav__item[data-eno-nav-id="lieblingsuebungen"],
+.eno-site-nav__item--lieblingsuebungen,
+.eno-hub-list-item--lieblingsuebungen,
+.eno-tool--lieblingsuebungen {
     --eno-item-accent: var(--eno-tool-uebungen);
     --eno-accent: var(--eno-tool-uebungen);
     --eno-accent-dark: color-mix(in srgb, var(--eno-tool-uebungen) 68%, #000);
 }
 
-.eno-site-nav__item[data-eno-nav-id="pedia"],
-.eno-site-nav__item--pedia,
-.eno-hub-card--pedia,
-.eno-tool--pedia {
+.eno-site-nav__item[data-eno-nav-id="abnehmlexikon"],
+.eno-site-nav__item--abnehmlexikon,
+.eno-hub-list-item--abnehmlexikon,
+.eno-tool--abnehmlexikon {
     --eno-item-accent: var(--eno-tool-pedia);
     --eno-accent: var(--eno-tool-pedia);
     --eno-accent-dark: color-mix(in srgb, var(--eno-tool-pedia) 68%, #000);
@@ -58,6 +59,7 @@
 
 .eno-site-nav__item[data-eno-nav-id="patreon"],
 .eno-site-nav__item--patreon,
+.eno-hub-list-item--patreon,
 .eno-hub-card--patreon,
 .eno-tool--patreon {
     --eno-item-accent: var(--eno-tool-patreon);

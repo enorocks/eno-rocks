@@ -21,19 +21,13 @@ const IMAGES = [
     },
     {
         file: 'eno-pedia.png',
-        name: 'enoPedia',
+        name: 'Abnehmlexikon',
         tagline: 'Fitness und Ernährung einfach erklärt',
         color: '#d4920a',
     },
     {
-        file: 'eno-dailytogether.png',
-        name: 'DailyTogether',
-        tagline: 'Weniger Chaos. Mehr WIR.',
-        color: '#e07a5f',
-    },
-    {
         file: 'eno-exercises.png',
-        name: 'enoExercises',
+        name: 'Lieblingsübungen',
         tagline: 'Übungen für Zuhause',
         color: '#d4534a',
     },
