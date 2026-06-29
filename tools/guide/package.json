@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "headers:generate": "node scripts/generate-header-svgs.mjs",
+    "prebuild": "npm run headers:generate",
     "preview": "vite preview"
   },
   "devDependencies": {

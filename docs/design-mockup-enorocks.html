@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eno.rocks Designrichtung · Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f3ede3;
+      --ink: #1c1917;
+      --muted: #6b635a;
+      --line: #ddd3c4;
+      --green: #1a6b56;
+      --green-soft: #e3f0eb;
+      --coral: #d96a4a;
+      --gold: #c9891a;
+      --radius: 18px;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Inter", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: #e8e2d8;
+      color: var(--ink);
+      line-height: 1.55;
+      padding: 24px 16px 48px;
+    }
+
+    .wrap {
+      max-width: 420px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    .note {
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .note strong { color: var(--ink); display: block; margin-bottom: 6px; }
+
+    /* Phone frame */
+    .phone {
+      background: var(--paper);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgb(28 25 23 / 18%);
+      border: 1px solid var(--line);
+    }
+
+    .phone-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* Hub mock */
+    .hub-hero {
+      padding: 28px 22px 24px;
+      background:
+        radial-gradient(ellipse 80% 60% at 100% 0%, rgb(26 107 86 / 12%), transparent),
+        var(--paper);
+    }
+
+    .wordmark {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .wordmark span { color: var(--green); }
+
+    .hub-lead {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 28ch;
+    }
+
+    .creator {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-top: 22px;
+      padding: 14px;
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), #0d3d32);
+      flex-shrink: 0;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 12px rgb(26 107 86 / 25%);
+    }
+
+    .creator-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .creator-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .section-title {
+      padding: 0 22px;
+      margin: 20px 0 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .feature {
+      margin: 0 14px 10px;
+      padding: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      min-height: 96px;
+    }
+
+    .feature-img {
+      background: linear-gradient(160deg, var(--green-soft), #fff);
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+    }
+
+    .feature-body {
+      padding: 14px 14px 14px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .feature-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .feature-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 2px;
+      line-height: 1.2;
+    }
+
+    .feature-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Guide article mock */
+    .article-hero {
+      height: 200px;
+      background:
+        linear-gradient(to top, rgb(28 25 23 / 75%), transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect fill='%231a6b56' width='400' height='200'/%3E%3Ccircle cx='320' cy='40' r='80' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E");
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .article-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-top: 6px;
+    }
+
+    .article-body {
+      padding: 20px 18px 24px;
+    }
+
+    .article-lead {
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .entry {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+    }
+
+    .entry-num {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .entry-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .entry-text {
+      grid-column: 2;
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+
+    .compare {
+      display: grid;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .compare div {
+      padding: 14px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .compare h3 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .compare ul {
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .compare li + li { margin-top: 4px; }
+
+    .bad { border-left: 3px solid #ccc; }
+    .good { border-left: 3px solid var(--green); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="note">
+      <strong>Designrichtung: „Creator Hub“, nicht SaaS</strong>
+      Mockup zum Anschauen im Browser. Weniger Tool Kacheln, mehr Olli, Editorial Layout, echte Fotos statt generischer Cards.
+    </div>
+
+    <div>
+      <p class="phone-label">Hub (Vorschlag)</p>
+      <div class="phone">
+        <div class="hub-hero">
+          <div class="wordmark">eno<span>.</span>rocks</div>
+          <p class="hub-lead">Was mir beim Abnehmen geholfen hat. Aus TikTok, zum Nachlesen.</p>
+          <div class="creator">
+            <div class="avatar" aria-hidden="true"></div>
+            <div>
+              <div class="creator-name">Einfach nur Olli</div>
+              <div class="creator-sub">TikTok · Rechner · Listen · ehrlich</div>
+            </div>
+          </div>
+        </div>
+        <p class="section-title">Start hier</p>
+        <div class="feature">
+          <div class="feature-img" style="background:linear-gradient(160deg,#dce8f8,#fff)">🔥</div>
+          <div class="feature-body">
+            <span class="feature-tag">Rechner</span>
+            <div class="feature-title">Kalorien & Makros</div>
+            <div class="feature-desc">Ehrlich statt exakt. Mit deinen Zahlen.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-img" style="background:linear-gradient(160deg,#f0e6d0,#fff)">★</div>
+          <div class="feature-body">
+            <span class="feature-tag">Guide</span>
+            <div class="feature-title">Meine Top Listen</div>
+            <div class="feature-desc">Produkte & Gewohnheiten mit Erklärung.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-img" style="background:linear-gradient(160deg,var(--green-soft),#fff)">📖</div>
+          <div class="feature-body">
+            <span class="feature-tag">Begriffe</span>
+            <div class="feature-title">enoPedia</div>
+            <div class="feature-desc">Fitness einfach erklärt.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="phone-label">enoGuide Artikel (Vorschlag)</p>
+      <div class="phone">
+        <div class="article-hero">
+          <span class="article-tag">Top Liste</span>
+          <h1 class="article-title">Meine Top Proteinquellen</h1>
+        </div>
+        <div class="article-body">
+          <p class="article-lead">Protein ist beim Abnehmen der wichtigste Hebel für Sättigung und Muskelerhalt. Das sind die Quellen, die bei mir wirklich oft auf dem Teller landen.</p>
+          <div class="entry">
+            <span class="entry-num">1</span>
+            <span class="entry-name">Skyr</span>
+            <p class="entry-text">Skyr liefert sehr viel Protein bei wenig Fett und eignet sich morgens oder als Snack. Die Sättigung hält oft länger als bei normalem Joghurt mit Zucker.</p>
+          </div>
+          <div class="entry">
+            <span class="entry-num">2</span>
+            <span class="entry-name">Magerhack 70 %</span>
+            <p class="entry-text">Rund 20 Gramm Protein pro 100 Gramm, vielseitig und gut für Meal Prep. Ideal, wenn du abends noch Protein nachlegen musst.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare">
+      <div class="bad">
+        <h3>Heute (zu SaaS)</h3>
+        <ul>
+          <li>Gleiche Card für alles</li>
+          <li>Lucide Icons, neutrale Flächen</li>
+          <li>„Kostenlose Tools“ Marketing Ton</li>
+          <li>Kein Gesicht, keine Story</li>
+        </ul>
+      </div>
+      <div class="good">
+        <h3>Ziel (Creator Editorial)</h3>
+        <ul>
+          <li>Display Font für Titel (z. B. Fraunces)</li>
+          <li>Dein Foto & TikTok als Einstieg</li>
+          <li>Content first: Listen & Tipps vor Tools</li>
+          <li>Warmes Papier, weniger Startup Grün</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
